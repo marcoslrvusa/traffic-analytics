@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Traffic Analytics · Painéis de cliente</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23151311'/><path d='M9 22V10M16 22V14M23 22V18' stroke='%23E31919' stroke-width='3.4' stroke-linecap='round'/></svg>">
+<style>
+  :root{
+    --bg:#FBFAF8; --txt:#1A1613; --muted:#6F6A63; --line:#EAE5DD; --line2:#DDD6CB;
+    --red:#E31919; --dark:#151311; --jp:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--txt); font-family:var(--jp);
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:32px 20px;
+  }
+  .wrap{width:100%; max-width:760px}
+  header{display:flex; align-items:center; gap:14px; margin-bottom:34px}
+  .logo{
+    width:52px; height:52px; border-radius:13px; background:var(--dark); display:grid; place-items:center; flex:none;
+  }
+  .logo svg{width:28px; height:28px}
+  h1{font-size:19px; font-weight:800; letter-spacing:-.3px}
+  .sub{font-size:12.5px; color:var(--muted); margin-top:2px}
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
+  a.card{
+    display:block; text-decoration:none; color:var(--txt); background:#fff;
+    border:1px solid var(--line); border-radius:16px; padding:22px 22px 20px;
+    transition:.16s ease; position:relative; overflow:hidden;
+  }
+  a.card:hover{border-color:var(--line2); box-shadow:0 14px 34px rgba(26,22,19,.09); transform:translateY(-2px)}
+  a.card::after{
+    content:''; position:absolute; inset:auto 0 0 0; height:3px; background:var(--red);
+    transform:scaleX(0); transform-origin:left; transition:.22s ease;
+  }
+  a.card:hover::after{transform:scaleX(1)}
+  .brow{display:flex; align-items:center; gap:13px; margin-bottom:16px}
+  .ini{
+    width:46px; height:46px; border-radius:12px; background:var(--dark); color:#fff;
+    display:grid; place-items:center; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:15px; flex:none;
+  }
+  .brow b{font-size:16px; font-weight:800}
+  .brow span{display:block; font-size:11px; color:var(--muted); font-family:'JetBrains Mono',monospace; margin-top:3px}
+  .go{
+    display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; color:var(--red);
+  }
+  .go svg{transition:.16s} a.card:hover .go svg{transform:translateX(3px)}
+  .kmeta{display:flex; gap:14px; margin-top:14px; padding-top:13px; border-top:1px solid var(--line); font-size:10.5px; color:var(--muted); font-family:'JetBrains Mono',monospace}
+  .banner{
+    margin-top:22px; background:#fff; border:1px dashed var(--line2); border-radius:13px;
+    padding:14px 18px; font-size:12.5px; color:var(--muted); display:none; align-items:center; gap:10px;
+  }
+  .banner.on{display:flex}
+  .banner b{color:var(--txt)}
+  .bar{flex:1; height:3px; background:var(--line); border-radius:99px; overflow:hidden; min-width:60px}
+  .bar i{display:block; height:100%; background:var(--red); width:100%; transform-origin:left; animation:drain 2.4s linear forwards}
+  @keyframes drain{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+  button.cancel{
+    background:none; border:0; font:inherit; font-size:11.5px; font-weight:700; color:var(--txt);
+    cursor:pointer; text-decoration:underline; flex:none;
+  }
+  footer{margin-top:36px; font-size:10.5px; color:var(--muted); font-family:'JetBrains Mono',monospace; display:flex; justify-content:space-between; gap:12px}
+  @media (max-width:520px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="logo"><svg viewBox="0 0 32 32" fill="none"><path d="M9 23V9M16 23V15M23 23V19" stroke="#E31919" stroke-width="3.2" stroke-linecap="round"/></svg></div>
+    <div>
+      <h1>Traffic Analytics</h1>
+      <div class="sub">Painéis de monitoramento SEO · escolha o cliente</div>
+    </div>
+  </header>
+
+  <section class="cards" id="cards"></section>
+
+  <div class="banner" id="redirect">
+    <span>Abrindo <b id="rname"></b> em instantes…</span>
+    <span class="bar"><i></i></span>
+    <button class="cancel" type="button" onclick="stopRedirect()">cancelar</button>
+  </div>
+
+  <footer>
+    <span>V4 EXPORT & COMMERCE</span>
+    <span id="footn">— clientes ativos</span>
+  </footer>
+</main>
+
+<script>
+const CLIENTS = [
+ {
+  "slug": "brasland",
+  "name": "Brasland",
+  "domain": "brasland.com.br",
+  "initials": "BR",
+  "market": "Brasil · pt",
+  "tool": "Ubersuggest"
+ },
+ {
+  "slug": "all-over",
+  "name": "All Over",
+  "domain": "allovertxroofing.com",
+  "initials": "AL",
+  "market": "EU · Houston · en",
+  "tool": "Ubersuggest"
+ }
+];
+
+const $=s=>document.querySelector(s);
+const arrow=`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+$('#cards').innerHTML=CLIENTS.map(c=>`
+  <a class="card" href="${c.slug}/" data-slug="${c.slug}">
+    <div class="brow">
+      <span class="ini">${c.initials}</span>
+      <div><b>${c.name}</b><span>${c.domain}</span></div>
+    </div>
+    <span class="go">Abrir painel ${arrow}</span>
+    <div class="kmeta"><span>${c.market}</span><span>${c.tool}</span></div>
+  </a>`).join('');
+$('#footn').textContent=`${CLIENTS.length} clientes ativos`;
+
+let timer=null;
+function stopRedirect(){
+  if(timer){clearTimeout(timer);timer=null;
+    const b=$('#redirect');b.classList.remove('on');
+  }
+}
+(function(){
+  let slug=null;
+  const q=new URLSearchParams(location.search);
+  if(q.get('c')&&CLIENTS.some(c=>c.slug===q.get('c')))slug=q.get('c');
+  else{
+    try{const last=localStorage.getItem('ta-lastclient');
+      if(last&&CLIENTS.some(c=>c.slug===last))slug=last;
+    }catch(_){}
+  }
+  if(!slug)return;
+  const c=CLIENTS.find(x=>x.slug===slug);
+  $('#rname').textContent=`${c.name} (último visitado)`;
+  const b=$('#redirect');b.classList.add('on');
+  document.body.addEventListener('click',e=>{if(!e.target.closest('#redirect'))stopRedirect()});
+  timer=setTimeout(()=>{location.href=c.slug+'/'},2400);
+})();
+</script>
+</body>
+</html>
