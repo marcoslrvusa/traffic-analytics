@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Diamond Tint &amp; Wraps · Traffic Analytics</title>
+<title>Traffic Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -321,99 +321,6 @@ th.num{text-align:right}
 
 body{font-feature-settings:'tnum' 1;letter-spacing:.005em}
 </style>
-<style>
-/* ---------- auditoria (Diamond) ---------- */
-.gaugewrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.gauge{width:132px;height:132px;flex:none}
-.gauge .track{fill:none;stroke:#EDE9E2;stroke-width:11}
-.gauge .val{fill:none;stroke:var(--red);stroke-width:11;stroke-linecap:round;transform:rotate(-90deg);transform-origin:66px 66px}
-.gauge .num{font-family:var(--m);font-size:29px;font-weight:600;fill:var(--txt)}
-.gauge .den{font-family:var(--m);font-size:11px;fill:var(--dim)}
-.gside{flex:1;min-width:180px}
-.sevbar{display:flex;height:8px;border-radius:99px;overflow:hidden;background:#EDE9E2;margin:2px 0 10px}
-.sevbar i{height:100%}
-.sevlegend{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;font-size:12px;color:var(--muted)}
-.sevlegend span{display:flex;align-items:center;gap:6px}
-.sevlegend i{width:7px;height:7px;border-radius:2px;flex:none}
-.sevlegend b{font-family:var(--m);font-weight:500;margin-left:auto;color:var(--txt)}
-.sevbadge{font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:4px;white-space:nowrap;font-weight:600}
-.sevbadge.crit{background:#FEF2F2;color:#B4231B;border:1px solid #F6CFCA}
-.sevbadge.high{background:#FFF7ED;color:#C2410C;border:1px solid #FED7AA}
-.sevbadge.med{background:#FEFCE8;color:#A16207;border:1px solid #FEF08A}
-.sevbadge.info{background:#F1F3F6;color:#5F6875;border:1px solid #E1E5EA}
-.sevbadge.ok{background:var(--green-050);color:var(--green);border:1px solid #CBE5D5}
-.finding{padding:14px 16px;border-bottom:1px solid #F1EDE6}
-.finding:last-child{border-bottom:0}
-.finding.hide{display:none}
-.fhead{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-.fcode{font-family:var(--m);font-size:11px;color:var(--dim);flex:none}
-.finding h3{font-size:14px;font-weight:600;line-height:1.4;flex:1;min-width:200px}
-.feff{font-family:var(--m);font-size:10.5px;color:var(--dim);white-space:nowrap}
-.fline{font-size:13px;color:var(--muted);line-height:1.6;margin-top:6px}
-.fline b{display:inline-block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-right:6px;min-width:58px}
-.fline code{font-family:var(--m);font-size:11.5px;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:#8A2B22;word-break:break-word}
-.phasecards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.phase{border:1px solid var(--line);border-radius:10px;padding:12px 12px 11px;background:var(--panel2);min-width:0}
-.phase .n{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-.phase .h{font-family:var(--m);font-size:25px;font-weight:600;letter-spacing:-.02em;margin-top:5px;line-height:1}
-.phase .h small{font-size:11px;color:var(--dim);font-weight:400;letter-spacing:0}
-.phase .nm{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.35;min-height:32px}
-.phase .pbar{height:5px;background:#E7E2D9;border-radius:99px;margin-top:9px;overflow:hidden}
-.phase .pbar i{display:block;height:100%;background:var(--red);border-radius:99px}
-.phase .pc{font-family:var(--m);font-size:10px;color:var(--dim);margin-top:5px}
-.hrow{display:flex;align-items:center;gap:10px;font-size:12.5px;padding:6px 0;border-bottom:1px dashed #EFEAE1}
-.hrow:last-child{border-bottom:0}
-.hrow .nm{width:92px;color:var(--muted);flex:none}
-.hrow .tr{flex:1;height:6px;background:#EDE9E2;border-radius:99px;overflow:hidden}
-.hrow .tr i{display:block;height:100%;background:var(--red);border-radius:99px}
-.hrow .vl{font-family:var(--m);font-size:11.5px;width:40px;text-align:right;flex:none}
-.risks td,.risks th{white-space:normal;overflow-wrap:anywhere;vertical-align:top}
-.risks td:nth-child(2){font-family:var(--m);font-size:11.5px;color:var(--dim)}
-.checklist{list-style:none;display:flex;flex-direction:column;gap:11px}
-.checklist li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.55}
-.checklist .n{width:21px;height:21px;border-radius:6px;background:var(--red-050);border:1px solid var(--red-100);color:var(--red-600);font-family:var(--m);font-size:10.5px;font-weight:600;display:grid;place-items:center;flex:none;margin-top:1px}
-.checklist b{color:var(--txt);font-weight:600}
-.note{border:1px dashed var(--line2);border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--muted);line-height:1.65;background:var(--panel2)}
-.note b{color:var(--txt)}
-.note a{color:var(--red-600);text-decoration:none;font-weight:600}
-.note a:hover{text-decoration:underline}
-.auditlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.kpi .val .pct{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0}
-.snapgrid.six{grid-template-columns:repeat(3,1fr)}
-.snapgrid.six .snap{padding:11px 12px 10px}
-.snap .val.sm{font-size:19px}
-.snap .foot{overflow-wrap:anywhere}
-.risklist{display:flex;flex-direction:column;gap:13px}
-.riskitem{display:flex;gap:9px;align-items:flex-start}
-.riskitem .rd{width:7px;height:7px;border-radius:2px;background:#B4231B;margin-top:6px;flex:none}
-.riskitem b{display:block;font-size:13.5px;font-weight:600;color:var(--txt);margin-bottom:2px;line-height:1.4}
-.riskitem p{font-size:12.5px;color:var(--muted);line-height:1.55}
-#view-indexation .hrow .nm{width:158px;flex:0 0 158px}
-@media(max-width:860px){.phasecards{grid-template-columns:1fr 1fr}.snapgrid.six{grid-template-columns:1fr 1fr}.gaugewrap{align-items:flex-start}}
-@media(max-width:760px){
-  .content{overflow-x:hidden}
-  .crumbs{white-space:normal;flex-wrap:wrap}
-  .vhead .aside{width:100%}
-  #view-indexation .hrow .nm{width:106px;flex-basis:106px}
-  .fhead{gap:7px}
-  .finding h3{min-width:100%}
-  .feff{margin-left:0}
-}
-@media print{
-  body{overflow:visible;background:#fff}
-  #app{display:block;height:auto}
-  .sidebar,.topbar{display:none!important}
-  main{display:block;background:#fff}
-  .content{overflow:visible;padding:0}
-  .view{display:block!important;max-width:none;page-break-after:always}
-  .view:last-child{page-break-after:auto}
-  .card,.kpi,.phase{break-inside:avoid;box-shadow:none}
-  .grid{display:block}
-  .card{margin-bottom:12px}
-  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-  a{color:inherit;text-decoration:none}
-}
-</style>
 </head>
 <body>
 
@@ -424,692 +331,915 @@ body{font-feature-settings:'tnum' 1;letter-spacing:.005em}
     </div>
     <div class="client" id="cselwrap">
       <button class="cs-btn" id="csel" type="button" aria-haspopup="listbox" aria-expanded="false">
-        <span class="av" id="cav">DT</span>
-        <span class="cslab"><small>Cliente</small><b id="csname">Diamond Tint</b></span>
+        <span class="av" id="cav">—</span>
+        <span class="cslab"><small>Cliente</small><b id="csname">—</b></span>
         <svg class="cs-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </button>
-      <div class="cs-pop" id="cpop" role="listbox" aria-label="Trocar de cliente"></div>
+      <div class="cs-pop" id="cpop" role="listbox" aria-label="Cambiar de cliente"></div>
     </div>
-    <div class="navlabel">Auditoria</div>
+    <div class="navlabel">Análisis</div>
     <nav id="nav">
       <button data-view="overview" class="on">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
-        <span>Visão geral</span><b>01</b>
+        <span>Visión general</span><b>01</b>
       </button>
-      <button data-view="diagnosis">
-        <svg viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>
-        <span>Diagnóstico</span><b>26</b>
+      <button data-view="keywords">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+        <span>Keywords</span><b id="navkw">40</b>
       </button>
-      <button data-view="plan">
-        <svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h13"/><circle cx="19" cy="12" r="2"/><circle cx="20" cy="19" r="2"/></svg>
-        <span>Plano</span><b>137h</b>
+      <button data-view="competition">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span>Competencia</span><b id="navcomp">00</b>
       </button>
-      <button data-view="projection">
-        <svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
-        <span>Projeção</span><b>90d</b>
-      </button>
-      <button data-view="indexation">
+      <button data-view="serp">
         <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/></svg>
-        <span>Indexação</span><b>GSC</b>
+        <span>SERPs</span><b id="navserp">08</b>
       </button>
-      <div class="navlabel">Configuração</div>
+      <button data-view="demand">
+        <svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
+        <span>Demanda</span><b>12m</b>
+      </button>
+      <div class="navlabel">Configuración</div>
       <button data-view="method">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-        <span>Metodologia</span><b>?</b>
+        <span>Metodología</span><b>?</b>
       </button>
     </nav>
     <div class="sidebar-foot">
-      <div class="mini"><span>Leitura</span><b>out/2026</b></div>
-      <div class="mini"><span>Próxima</span><b>Fase 0</b></div>
-      <div class="status"><i></i><span>26 achados · 5 críticos</span></div>
+      <div class="mini"><span>Lectura</span><b id="lastread">—</b></div>
+      <div class="mini"><span>Próxima</span><b id="nextupd">—</b></div>
+      <div class="status"><i></i><span id="covtxt">38/40 leídas</span></div>
     </div>
   </aside>
 
   <main>
     <header class="topbar">
       <div class="crumbs">
-        <span class="brandname"><i></i>Traffic Analytics</span><span class="sep">/</span><span>Diamond Tint &amp; Wraps</span><span class="sep">/</span><b id="crumb">Visão geral</b>
+        <span class="brandname"><i></i>Traffic Analytics</span><span class="sep">/</span><span id="cbrumb">—</span><span class="sep">/</span><b id="crumb">Visión general</b>
       </div>
       <div class="filters">
-        <span class="chip mono">auditoria · out/2026</span>
-        <a class="ghost" href="auditoria/" target="_blank" rel="noopener" style="text-decoration:none">Auditoria completa ↗</a>
-        <button class="primary" type="button" onclick="window.print()">
-          <svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
-          <span>Salvar PDF</span>
+        <div class="sel"><select id="fcluster"><option value="">Todos los clusters</option></select></div>
+        <div class="sel"><select id="fprio"><option value="">Toda prioridad</option><option>P1</option><option>P2</option><option>P3</option></select></div>
+        <div class="sel"><select id="fmonths"><option value="12">12 meses</option><option value="6">6 meses</option><option value="3">3 meses</option></select></div>
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="fq" placeholder="Buscar keyword…">
+        </div>
+        <button class="ghost" id="freset">Limpiar</button>
+        <button class="ghost red" id="fexport">Exportar CSV</button>
+        <button class="primary" id="frefresh" title="Buscar posiciones actualizadas vía server.py (MCP)">
+          <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg>
+          <span>Actualizar</span>
         </button>
       </div>
     </header>
 
     <div class="content" id="content">
-
-      <!-- ================= OVERVIEW ================= -->
+      <!-- OVERVIEW -->
       <section class="view on" id="view-overview">
         <div class="vhead">
           <div>
-            <h1>Visão geral</h1>
-            <p>Diagnóstico, plano e projeção da auditoria SEO · Las Vegas, NV · diamondtintlv.com</p>
+            <h1>Visión general</h1>
+            <p id="ovsub">Monitoreo de rankings orgánicos</p>
           </div>
           <div class="aside">
-            <span class="chip"><i></i><b>44</b> URLs HTML</span>
-            <span class="chip mono">276 rastreadas</span>
+            <span class="chip"><i></i><b id="olcount">40</b> keywords</span>
+            <span class="chip mono" id="ovbase">base —</span>
           </div>
         </div>
-
-        <div class="grid">
-          <div class="kpis">
-            <div class="kpi">
-              <span class="lab">Saúde SEO</span>
-              <span class="val">6,1<small>/10</small></span>
-              <span class="foot">Nota composta da auditoria</span>
-            </div>
-            <div class="kpi">
-              <span class="lab">Achados</span>
-              <span class="val">26</span>
-              <span class="foot">5 críticos · 7 altos · 8 médios · 6 info</span>
-            </div>
-            <div class="kpi">
-              <span class="lab">Esforço total</span>
-              <span class="val">137<small>h</small></span>
-              <span class="foot">Fase 0 (22 h) + sprint de 3 meses (115 h)</span>
-            </div>
-            <div class="kpi">
-              <span class="lab">Projeção de tráfego</span>
-              <span class="val">+30–50<span class="pct">%</span></span>
-              <span class="foot">Orgânico em 90 dias após a Fase 0</span>
-            </div>
-          </div>
-
-          <div class="insight">
-            <span class="ico">!</span>
-            <p><b>A Fase 0 é bloqueante.</b> Sem schema nas 44 páginas, H1 posicionável e o 404 interno corrigido, o sprint de 3 meses não começa — o site seguiria comprometendo indexação e CTR.</p>
-          </div>
-
-          <div class="card" style="grid-column:span 7">
-            <div class="cardhead"><div><h3>Raio-x do site</h3><div class="sub">Crawl de 276 URLs · out/2026</div></div><span class="tag">Screaming Frog</span></div>
-            <div class="snapgrid six">
-              <div class="snap"><span class="lab">URLs rastreadas</span><span class="val">276</span><span class="foot">266 indexáveis · 10 não indexáveis</span></div>
-              <div class="snap"><span class="lab">HTML indexáveis</span><span class="val">44</span><span class="foot">home + 7 serviços + blog + sistema</span></div>
-              <div class="snap"><span class="lab">Imagens</span><span class="val">200</span><span class="foot">180 acima de 100 KB</span></div>
-              <div class="snap"><span class="lab">Pico de imagem</span><span class="val sm">1,7<small>MB</small></span><span class="foot">IMG_20251101_102028.jpg</span></div>
-              <div class="snap"><span class="lab">URLs lentas</span><span class="val">28</span><span class="foot">entre 2 e 3 s · 10,1% do site</span></div>
-              <div class="snap"><span class="lab">Schema markup</span><span class="val">0<small>/44</small></span><span class="foot">nenhum JSON-LD no site</span></div>
-            </div>
-            <div class="note" style="margin-top:12px">Canonicals autorreferentes em <b>100%</b> das HTML, HTTPS válido, sitemap presente e blog ativo com mais de 20 posts densos. A base técnica está de pé; o que falta é estrutura semântica e performance.</div>
-          </div>
-
-          <div class="card" style="grid-column:span 5">
-            <div class="cardhead"><div><h3>Saúde e severidade</h3><div class="sub">26 achados ponderados por impacto</div></div></div>
-            <div class="gaugewrap">
-              <svg class="gauge" viewBox="0 0 132 132" aria-label="Saúde SEO 6,1 de 10">
-                <circle class="track" cx="66" cy="66" r="54"></circle>
-                <circle class="val" id="gaugeArc" cx="66" cy="66" r="54" stroke-dasharray="0 339.29"></circle>
-                <text class="num" x="66" y="66" text-anchor="middle">6,1</text>
-                <text class="den" x="66" y="82" text-anchor="middle">de 10</text>
-              </svg>
-              <div class="gside">
-                <div class="sevbar">
-                  <i style="width:19.2%;background:#B4231B"></i>
-                  <i style="width:26.9%;background:#C2410C"></i>
-                  <i style="width:30.8%;background:#CA8A04"></i>
-                  <i style="width:23.1%;background:#9AA3AE"></i>
-                </div>
-                <div class="sevlegend">
-                  <span><i style="background:#B4231B"></i>Críticos <b>5</b></span>
-                  <span><i style="background:#C2410C"></i>Altos <b>7</b></span>
-                  <span><i style="background:#CA8A04"></i>Médios <b>8</b></span>
-                  <span><i style="background:#9AA3AE"></i>Info <b>6</b></span>
-                </div>
-                <div class="hint" style="margin-top:10px">5 achados impedem indexação ou ranking; 7 comprometem CTR e experiência.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="grid-column:span 6">
-            <div class="cardhead"><div><h3>Top 3 riscos para o C-Level</h3><div class="sub">O que trava receita hoje</div></div></div>
-            <div class="risklist">
-              <div class="riskitem"><span class="rd"></span><div><b>Cero structured data em 44/44 páginas</b><p>Perda estimada de 20–30% de CTR nas páginas de serviço.</p></div></div>
-              <div class="riskitem"><span class="rd"></span><div><b>H1 da home é promocional</b><p>“UPGRADE YOUR COMFORT…” não diz tema nem cidade na página mais forte do domínio.</p></div></div>
-              <div class="riskitem"><span class="rd"></span><div><b>180 imagens acima de 100 KB</b><p>LCP comprometido nas money pages · pico de 1,7 MB na galeria.</p></div></div>
-            </div>
-          </div>
-
-          <div class="card" style="grid-column:span 6">
-            <div class="cardhead"><div><h3>Distribuição do esforço</h3><div class="sub">137 h em 4 fases</div></div></div>
-            <div class="phasecards" style="grid-template-columns:1fr 1fr">
-              <div class="phase"><div class="n">Fase 0 · 16%</div><div class="h">22<small> h</small></div><div class="nm">Casa em ordem</div><div class="pbar"><i style="width:16%"></i></div></div>
-              <div class="phase"><div class="n">Fase 1 · 26%</div><div class="h">35<small> h</small></div><div class="nm">Fundação técnica</div><div class="pbar"><i style="width:26%"></i></div></div>
-              <div class="phase"><div class="n">Fase 2 · 30%</div><div class="h">42<small> h</small></div><div class="nm">Conteúdo e estrutura</div><div class="pbar"><i style="width:30%"></i></div></div>
-              <div class="phase"><div class="n">Fase 3 · 28%</div><div class="h">38<small> h</small></div><div class="nm">Expansão e monitoramento</div><div class="pbar"><i style="width:28%"></i></div></div>
-            </div>
-            <div class="hint" style="margin-top:12px">A Fase 0 é pré-requisito fora do sprint. O sprint de 3 meses soma <b>115 h</b> (Fases 1 a 3).</div>
-          </div>
-
-          <div class="card" style="grid-column:span 12">
-            <div class="cardhead"><div><h3>Como ler este painel</h3><div class="sub">Escopo e honestidade de dados</div></div></div>
-            <div class="note">Este painel nasce da <b>auditoria técnica</b> (crawl de 276 URLs, 35 CSVs) e da <b>cobertura do Search Console</b> (15/07 a 08/10/2026). A camada de posições, volumes e SERPs do Ubersuggest ainda não tem baseline para a Diamond: ela entra após a Fase 0, com leitura própria — <b>nenhuma posição é estimada aqui</b>. O projeto já existe no Ubersuggest (diamondtintlv.com · US/en · desktop) com 5 concorrentes monitorados: 3M, LLumar, Sun Stopper, Tint World e XPEL.<div class="auditlinks"><a href="auditoria/" target="_blank" rel="noopener">Abrir auditoria completa →</a></div></div>
-          </div>
+        <div class="grid" id="ovgrid">
+          <div class="kpis" id="ovkpis"></div>
+          <div class="card" style="grid-column:span 12" id="card-seosnap"></div>
+          <div class="insight" id="ovinsight"></div>
+          <div class="card" style="grid-column:span 8" id="card-demand"></div>
+          <div class="card" style="grid-column:span 4" id="card-donut"></div>
+          <div class="card" style="grid-column:span 6" id="card-poshist"></div>
+          <div class="card" style="grid-column:span 6" id="card-trafhist"></div>
+          <div class="card" style="grid-column:span 8" id="card-scatter"></div>
+          <div class="card" style="grid-column:span 4" id="card-diff"></div>
+          <div class="card pad0" style="grid-column:span 12" id="card-opps"></div>
         </div>
       </section>
 
-      <!-- ================= DIAGNOSIS ================= -->
-      <section class="view" id="view-diagnosis">
+      <!-- KEYWORDS -->
+      <section class="view" id="view-keywords">
         <div class="vhead">
-          <div><h1>Diagnóstico</h1><p>26 achados da auditoria, por severidade e esforço</p></div>
-          <div class="aside tabs" id="sevTabs">
-            <button class="tab on" data-sev="all">Todos <b>26</b></button>
-            <button class="tab" data-sev="crit">Críticos <b>5</b></button>
-            <button class="tab" data-sev="high">Altos <b>7</b></button>
-            <button class="tab" data-sev="med">Médios <b>8</b></button>
-            <button class="tab" data-sev="info">Info <b>6</b></button>
+          <div><h1>Keywords</h1><p id="kwsub">Portafolio monitoreado, ordenable y filtrable</p></div>
+          <div class="aside">
+            <div class="sel"><select id="fper"><option value="12">12 por página</option><option value="25">25 por página</option><option value="50">50 por página</option></select></div>
           </div>
-        </div>
-        <div class="grid">
-          <div class="card pad0" style="grid-column:span 12" id="findings">
-            <div class="finding" data-sev="crit">
-              <div class="fhead"><span class="fcode">C-01</span><span class="sevbadge crit">Crítico</span><h3>Zero schema no 100% das páginas</h3><span class="feff">6 h · Fase 0</span></div>
-              <div class="fline"><b>Evidência</b>44/44 HTML sem JSON-LD ou Microdata · <code>structured_data_all.csv</code> com Rich Result Features = 0 em todas as linhas.</div>
-              <div class="fline"><b>Impacto</b>Perda total de diferenciação no SERP; CTR estimado de 20% a 30% menor.</div>
-              <div class="fline"><b>Solução</b>LocalBusiness global + FAQ nos serviços + Article no blog.</div>
-            </div>
-            <div class="finding" data-sev="crit">
-              <div class="fhead"><span class="fcode">C-02</span><span class="sevbadge crit">Crítico</span><h3>H1 promocional na home + 24 H1 “Post navigation”</h3><span class="feff">3 h · Fase 0</span></div>
-              <div class="fline"><b>Evidência</b>Home = “UPGRADE YOUR COMFORT: UP TO 10% OFF WINDOW TINT!” · <code>h1_all.csv</code> com 24 URLs repetindo “Post navigation”.</div>
-              <div class="fline"><b>Impacto</b>Google não identifica tema nem localização na página mais forte do domínio.</div>
-              <div class="fline"><b>Solução</b>H1 com “Window Tint Las Vegas”, um H1 único por URL.</div>
-            </div>
-            <div class="finding" data-sev="crit">
-              <div class="fhead"><span class="fcode">C-03</span><span class="sevbadge crit">Crítico</span><h3>Telefone como H2 em mais de 8 páginas de serviço</h3><span class="feff">4 h · Fase 0</span></div>
-              <div class="fline"><b>Evidência</b><code>702.780.7399</code> como H2 em testimonials, gallery, commercial, vehicle, ceramic, wraps, paint-protection e home · 36 páginas com múltiplos H2.</div>
-              <div class="fline"><b>Impacto</b>Ruído semântico no template; Google perde a hierarquia de tópicos.</div>
-              <div class="fline"><b>Solução</b>Telefone passa a CTA/botão; H2 reescritos com keyword + cidade.</div>
-            </div>
-            <div class="finding" data-sev="crit">
-              <div class="fhead"><span class="fcode">C-04</span><span class="sevbadge crit">Crítico</span><h3>180 imagens acima de 100 KB</h3><span class="feff">8 h · Fase 1</span></div>
-              <div class="fline"><b>Evidência</b>90% do banco de imagens é pesado; 8 JPGs acima de 1 MB · pico <code>IMG_20251101_102028.jpg</code> com 1.703.936 bytes.</div>
-              <div class="fline"><b>Impacto</b>LCP comprometido nas money pages; alta taxa de rejeição no mobile.</div>
-              <div class="fline"><b>Solução</b>Compressão + WebP + lazy load + width/height (174 imagens sem dimensões).</div>
-            </div>
-            <div class="finding" data-sev="crit">
-              <div class="fhead"><span class="fcode">C-05</span><span class="sevbadge crit">Crítico</span><h3>28 URLs entre 2 e 3 segundos</h3><span class="feff">4 h · Fase 1</span></div>
-              <div class="fline"><b>Evidência</b>Blog 2,08 s · testimonials 2,54 s · commercial 2,44 s · <code>response_time_(in_seconds).csv</code> com 28 URLs (10,1%) na faixa.</div>
-              <div class="fline"><b>Impacto</b>Core Web Vitals (LCP) em risco; impacto direto em conversão.</div>
-              <div class="fline"><b>Solução</b>Imagens + cache LiteSpeed + revisão de scripts.</div>
-            </div>
-
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-01</span><span class="sevbadge high">Alto</span><h3>15 titles recortados + duplicados de paginação</h3><span class="feff">6 h · Fase 1</span></div>
-              <div class="fline"><b>Evidência</b>Home 61 caracteres/586 px · blog 64/575 · gallery 65/598 · /page/2 e /page/3 repetem titles.</div>
-              <div class="fline"><b>Impacto</b>CTR reduzido e canibalização entre páginas de listagem.</div>
-              <div class="fline"><b>Solução</b>Titles únicos de 50 a 60 caracteres; paginação com sufixo “Página N”.</div>
-            </div>
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-02</span><span class="sevbadge high">Alto</span><h3>4 metas ausentes em posts indexáveis + 2 excedidas</h3><span class="feff">6 h · Fase 1</span></div>
-              <div class="fline"><b>Evidência</b>Sem meta: legal-regulations, professional-window-tinting, maintenance-tips, environmental-benefits · excedidas: diy-tint-kits (156), ceramic-vegas-heat (177).</div>
-              <div class="fline"><b>Impacto</b>Perda de controle sobre o snippet e de palavras-chave de apoio.</div>
-              <div class="fline"><b>Solução</b>120 a 155 caracteres com keyword + CTA + Las Vegas.</div>
-            </div>
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-03</span><span class="sevbadge high">Alto</span><h3>172 imagens sem alt text</h3><span class="feff">5 h · Fase 1</span></div>
-              <div class="fline"><b>Evidência</b>86% das imagens sem descrição — em um negócio visual (wraps, PPF, galeria).</div>
-              <div class="fline"><b>Impacto</b>Perda de relevância em busca por imagem e de acessibilidade.</div>
-              <div class="fline"><b>Solução</b>Alt de 50 a 100 caracteres com serviço + modelo.</div>
-            </div>
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-04</span><span class="sevbadge high">Alto</span><h3>404 interno LINK_DA_GALERIA + URLs fora do padrão</h3><span class="feff">2 h · Fase 0</span></div>
-              <div class="fline"><b>Evidência</b>Enlace interno com placeholder de agência <code>/LINK_DA_GALERIA</code> · 2 URLs com underline · 1 non-ASCII.</div>
-              <div class="fline"><b>Impacto</b>Experiência quebrada e desperdício de crawl em página que converte.</div>
-              <div class="fline"><b>Solução</b>Apontar para /gallery/; minúsculas com hífen + redirect.</div>
-            </div>
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-05</span><span class="sevbadge high">Alto</span><h3>Thin content em about, contact e gallery</h3><span class="feff">8 h · Fase 2</span></div>
-              <div class="fline"><b>Evidência</b>About 300 palavras · contact 289 · gallery 401 · concorrentes de “window tint las vegas” têm 993 a 1.194.</div>
-              <div class="fline"><b>Impacto</b>Páginas de apoio sem força para sustentar EEAT local e conversão.</div>
-              <div class="fline"><b>Solução</b>Expandir para 600+ palavras com EEAT local, NAP e zonas de Las Vegas.</div>
-            </div>
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-06</span><span class="sevbadge high">Alto</span><h3>Security headers ausentes</h3><span class="feff">2 h · Fase 0</span></div>
-              <div class="fline"><b>Evidência</b>272 URLs sem HSTS, CSP, X-Frame-Options ou XCTO.</div>
-              <div class="fline"><b>Impacto</b>Risco de segurança e sinal de qualidade técnica abaixo do mercado.</div>
-              <div class="fline"><b>Solução</b>Headers no servidor/LiteSpeed.</div>
-            </div>
-            <div class="finding" data-sev="high">
-              <div class="fhead"><span class="fcode">A-07</span><span class="sevbadge high">Alto</span><h3>Hierarquia quebrada: 28 H2 não sequenciais</h3><span class="feff">4 h · Fase 1</span></div>
-              <div class="fline"><b>Evidência</b>Estrutura H1→H2 interrompida em 28 páginas · +24 H1 não sequenciais.</div>
-              <div class="fline"><b>Impacto</b>Google não entende a prioridade dos tópicos dentro da página.</div>
-              <div class="fline"><b>Solução</b>Reordenar headings por página.</div>
-            </div>
-
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-01</span><span class="sevbadge med">Médio</span><h3>6 URLs com noindex em author/category</h3><span class="feff">manter</span></div>
-              <div class="fline"><b>Leitura</b>Noindex correto em author e category — é proteção, não erro. Nenhuma ação necessária.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-02</span><span class="sevbadge med">Médio</span><h3>Redirects /page/1 → canônico</h3><span class="feff">1 h · contínuo</span></div>
-              <div class="fline"><b>Evidência</b>Redirect configurado corretamente, mas ainda há enlaces internos apontando para /page/1.</div>
-              <div class="fline"><b>Solução</b>Remover os enlaces internos para a página redirecionada.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-03</span><span class="sevbadge med">Médio</span><h3>9 anchors “click here / learn more”</h3><span class="feff">1 h · contínuo</span></div>
-              <div class="fline"><b>Impacto</b>Anchor genérico não transfere contexto para a página de destino.</div>
-              <div class="fline"><b>Solução</b>Anchors descritivos com serviço + intenção.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-04</span><span class="sevbadge med">Médio</span><h3>6 enlaces sem anchor</h3><span class="feff">1 h · contínuo</span></div>
-              <div class="fline"><b>Evidência</b>Links sem texto âncora (imagem ou vazio) em páginas de serviço.</div>
-              <div class="fline"><b>Solução</b>Texto alternativo no link ou aria-label descritivo.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-05</span><span class="sevbadge med">Médio</span><h3>6 páginas com legibilidade difícil</h3><span class="feff">2 h · contínuo</span></div>
-              <div class="fline"><b>Impacto</b>Frases longas e blocos densos reduzem tempo de leitura e conversão.</div>
-              <div class="fline"><b>Solução</b>Encurtar frases, quebrar parágrafos e usar listas.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-06</span><span class="sevbadge med">Médio</span><h3>H2 com mais de 70 caracteres em 7 páginas</h3><span class="feff">2 h · contínuo</span></div>
-              <div class="fline"><b>Impacto</b>Subtítulos longos diluem a keyword e a leitura escaneável.</div>
-              <div class="fline"><b>Solução</b>H2 de 40 a 65 caracteres com serviço + cidade.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-07</span><span class="sevbadge med">Médio</span><h3>Links externos 403 no Yelp</h3><span class="feff">manter</span></div>
-              <div class="fline"><b>Leitura</b>Bloqueio do próprio Yelp para crawlers — comportamento esperado. Nenhuma ação.</div>
-            </div>
-            <div class="finding" data-sev="med">
-              <div class="fhead"><span class="fcode">M-08</span><span class="sevbadge med">Médio</span><h3>301 em royalinkdesign / facebook</h3><span class="feff">1 h · contínuo</span></div>
-              <div class="fline"><b>Evidência</b>Dois links externos ainda apontam para URLs antigas com 301.</div>
-              <div class="fline"><b>Solução</b>Atualizar para o destino final.</div>
-            </div>
-
-            <div class="finding" data-sev="info">
-              <div class="fhead"><span class="fcode">I-01</span><span class="sevbadge ok">Info · manter</span><h3>Canonicals autorreferentes em 100%</h3></div>
-              <div class="fline"><b>Leitura</b>Todas as HTML têm canonical correto — base sólida contra duplicação.</div>
-            </div>
-            <div class="finding" data-sev="info">
-              <div class="fhead"><span class="fcode">I-02</span><span class="sevbadge ok">Info · manter</span><h3>HTTPS válido</h3></div>
-              <div class="fline"><b>Leitura</b>Certificado e redirecionamento corretos; falta apenas completar os security headers (A-06).</div>
-            </div>
-            <div class="finding" data-sev="info">
-              <div class="fhead"><span class="fcode">I-03</span><span class="sevbadge ok">Info · manter</span><h3>Sitemap XML presente</h3></div>
-              <div class="fline"><b>Leitura</b>Sitemap ativo e coerente com as páginas indexáveis.</div>
-            </div>
-            <div class="finding" data-sev="info">
-              <div class="fhead"><span class="fcode">I-04</span><span class="sevbadge ok">Info · manter</span><h3>Noindex correto em author/category</h3></div>
-              <div class="fline"><b>Leitura</b>Taxonomias de baixo valor estão protegidas — evita canibalização e thin content.</div>
-            </div>
-            <div class="finding" data-sev="info">
-              <div class="fhead"><span class="fcode">I-05</span><span class="sevbadge ok">Info · manter</span><h3>Blog ativo com mais de 20 posts densos</h3></div>
-              <div class="fline"><b>Leitura</b>Posts de 579 a 1.471 palavras — ativo de conteúdo real para clusters futuros.</div>
-            </div>
-            <div class="finding" data-sev="info">
-              <div class="fhead"><span class="fcode">I-06</span><span class="sevbadge ok">Info · manter</span><h3>Enlaces internos sólidos</h3></div>
-              <div class="fline"><b>Leitura</b>Home com 96 inlinks; serviços entre 44 e 56 — boa distribuição de autoridade interna.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= PLAN ================= -->
-      <section class="view" id="view-plan">
-        <div class="vhead">
-          <div><h1>Plano de execução</h1><p>Fase 0 bloqueante + sprint de 3 meses · sem datas, ordem por fases</p></div>
-          <div class="aside"><span class="chip"><i></i><b>137</b> h totais</span><span class="chip mono">115 h no sprint</span></div>
-        </div>
-        <div class="grid">
-          <div class="card" style="grid-column:span 12">
-            <div class="cardhead"><div><h3>Evolução do projeto</h3><div class="sub">Distribuição do esforço nas 4 fases</div></div></div>
-            <div class="phasecards">
-              <div class="phase"><div class="n">Fase 0 · 16%</div><div class="h">22<small> h</small></div><div class="nm">Casa em ordem</div><div class="pbar"><i style="width:16%"></i></div><div class="pc">pré-requisito</div></div>
-              <div class="phase"><div class="n">Fase 1 · 26%</div><div class="h">35<small> h</small></div><div class="nm">Fundação técnica</div><div class="pbar"><i style="width:26%"></i></div><div class="pc">mês 1</div></div>
-              <div class="phase"><div class="n">Fase 2 · 30%</div><div class="h">42<small> h</small></div><div class="nm">Conteúdo e estrutura</div><div class="pbar"><i style="width:30%"></i></div><div class="pc">mês 2</div></div>
-              <div class="phase"><div class="n">Fase 3 · 28%</div><div class="h">38<small> h</small></div><div class="nm">Expansão e monitoramento</div><div class="pbar"><i style="width:28%"></i></div><div class="pc">mês 3</div></div>
-            </div>
-            <div class="note" style="margin-top:14px"><b>Fase 0 · Casa em ordem (22 h).</b> Sem esta fase o sprint não inicia: o site continuaria comprometendo indexação e CTR. Entregável: site indexável, sem telefone em H2, schema validado e zero 404 interno.</div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 6">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Fase 0 · Casa em ordem</h3><div class="sub">22 h · bloqueante</div></div><span class="tag">pré-sprint</span></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>#</th><th>Ação</th><th class="num">Horas</th><th>Resp.</th></tr></thead>
-              <tbody>
-                <tr><td class="mono">1</td><td>LocalBusiness + schema de serviços (JSON-LD global)</td><td class="num">6</td><td>Dev</td></tr>
-                <tr><td class="mono">2</td><td>H1 da home + H1 “Post navigation” únicos</td><td class="num">3</td><td>SEO</td></tr>
-                <tr><td class="mono">3</td><td>Telefone fora dos H2 (8+ serviços) → CTA</td><td class="num">4</td><td>SEO/Dev</td></tr>
-                <tr><td class="mono">4</td><td>Corrigir 404 LINK_DA_GALERIA + padronizar URLs</td><td class="num">2</td><td>Dev</td></tr>
-                <tr><td class="mono">5</td><td>Titles/metas críticos (home, gallery, 4 posts)</td><td class="num">3</td><td>SEO</td></tr>
-                <tr><td class="mono">6</td><td>Security headers (HSTS, X-Frame, XCTO, Referrer)</td><td class="num">2</td><td>Dev</td></tr>
-                <tr><td class="mono">7</td><td>GSC + sitemap + validação de rich results</td><td class="num">2</td><td>SEO</td></tr>
-              </tbody>
-            </table></div>
-            <div class="pager"><span>Total Fase 0</span><b class="mono">22 h</b></div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 6">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Fase 1 · Fundação técnica</h3><div class="sub">35 h · mês 1</div></div></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>#</th><th>Ação</th><th class="num">Horas</th><th>Resp.</th></tr></thead>
-              <tbody>
-                <tr><td class="mono">1</td><td>Titles únicos de 50–60 caracteres (15 + paginação)</td><td class="num">6</td><td>SEO</td></tr>
-                <tr><td class="mono">2</td><td>Metas de 120–155 caracteres (4 ausentes + 2 longas)</td><td class="num">6</td><td>Copy</td></tr>
-                <tr><td class="mono">3</td><td>Hierarquia H1→H2 (28 + 24 páginas)</td><td class="num">4</td><td>SEO</td></tr>
-                <tr><td class="mono">4</td><td>Comprimir 180 imagens → WebP + width/height</td><td class="num">8</td><td>Design</td></tr>
-                <tr><td class="mono">5</td><td>Alt text em 172 imagens (serviços + galeria)</td><td class="num">5</td><td>SEO</td></tr>
-                <tr><td class="mono">6</td><td>28 URLs lentas (cache, scripts, LiteSpeed)</td><td class="num">4</td><td>Dev</td></tr>
-                <tr><td class="mono">7</td><td>Anchors genéricos + links sem texto</td><td class="num">2</td><td>SEO</td></tr>
-              </tbody>
-            </table></div>
-            <div class="pager"><span>Total Fase 1</span><b class="mono">35 h</b></div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 6">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Fase 2 · Conteúdo e estrutura</h3><div class="sub">42 h · mês 2</div></div></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>#</th><th>Ação</th><th class="num">Horas</th><th>Resp.</th></tr></thead>
-              <tbody>
-                <tr><td class="mono">1</td><td>Expandir thin: about 300 → 600+, contact, gallery</td><td class="num">8</td><td>Copy</td></tr>
-                <tr><td class="mono">2</td><td>Profundar serviços (vehicle, commercial, home, PPF, wraps, ceramic)</td><td class="num">12</td><td>Copy</td></tr>
-                <tr><td class="mono">3</td><td>FAQ schema nos serviços</td><td class="num">4</td><td>Dev</td></tr>
-                <tr><td class="mono">4</td><td>Google Business Profile + zonas de Las Vegas</td><td class="num">3</td><td>SEO</td></tr>
-                <tr><td class="mono">5</td><td>Campanha de reviews (Google + Yelp)</td><td class="num">3</td><td>SEO</td></tr>
-                <tr><td class="mono">6</td><td>Malha de links internos (hub ↔ serviços ↔ blog)</td><td class="num">4</td><td>SEO</td></tr>
-                <tr><td class="mono">7</td><td>Clusters: ceramic vs carbon, heat/UV, leis de NV</td><td class="num">8</td><td>Copy</td></tr>
-              </tbody>
-            </table></div>
-            <div class="pager"><span>Total Fase 2</span><b class="mono">42 h</b></div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 6">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Fase 3 · Expansão e monitoramento</h3><div class="sub">38 h · mês 3</div></div></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>#</th><th>Ação</th><th class="num">Horas</th><th>Resp.</th></tr></thead>
-              <tbody>
-                <tr><td class="mono">1</td><td>llms.txt + GEO/AEO (citação em IAs)</td><td class="num">3</td><td>SEO</td></tr>
-                <tr><td class="mono">2</td><td>2 hubs de autoridade (heat protection, PPF vs ceramic)</td><td class="num">12</td><td>Copy</td></tr>
-                <tr><td class="mono">3</td><td>Link building local (dealers, detailers, diretórios NV)</td><td class="num">8</td><td>SEO</td></tr>
-                <tr><td class="mono">4</td><td>Core Web Vitals final (LCP, CLS, INP)</td><td class="num">6</td><td>Dev</td></tr>
-                <tr><td class="mono">5</td><td>Galeria antes/depois otimizada</td><td class="num">3</td><td>Design</td></tr>
-                <tr><td class="mono">6</td><td>Blog semanal + relatórios mensais</td><td class="num">6</td><td>Copy/SEO</td></tr>
-              </tbody>
-            </table></div>
-            <div class="pager"><span>Total Fase 3</span><b class="mono">38 h</b></div>
-          </div>
-
-          <div class="card" style="grid-column:span 5">
-            <div class="cardhead"><div><h3>Esforço por especialidade</h3><div class="sub">137 h no total</div></div></div>
-            <div class="hrow"><span class="nm">SEO</span><span class="tr"><i style="width:100%"></i></span><span class="vl">56 h</span></div>
-            <div class="hrow"><span class="nm">Copywriter</span><span class="tr"><i style="width:85.7%"></i></span><span class="vl">48 h</span></div>
-            <div class="hrow"><span class="nm">Dev WordPress</span><span class="tr"><i style="width:39.3%"></i></span><span class="vl">22 h</span></div>
-            <div class="hrow"><span class="nm">Design</span><span class="tr"><i style="width:19.6%"></i></span><span class="vl">11 h</span></div>
-            <div class="hint" style="margin-top:10px">SEO concentra 41% do esforço — a maior parte em conteúdo, headings e metadados.</div>
-          </div>
-
-          <div class="card" style="grid-column:span 7">
-            <div class="cardhead"><div><h3>Leitura do plano</h3><div class="sub">Por que esta ordem</div></div></div>
-            <div class="note">A sequência é deliberada: <b>Fase 0</b> remove bloqueios de indexação e valida schema; <b>Fase 1</b> conserta o que derruba CTR e LCP; <b>Fase 2</b> transforma páginas fracas em ativos de EEAT local; <b>Fase 3</b> expande autoridade e cria o ciclo de monitoramento. Cada fase fecha com relatório mensal e alimenta o Sprint 2.</div>
-            <div class="auditlinks"><a href="auditoria/" target="_blank" rel="noopener">Ver plano detalhado na auditoria →</a></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= PROJECTION ================= -->
-      <section class="view" id="view-projection">
-        <div class="vhead">
-          <div><h1>Projeção &amp; KPIs</h1><p>Impacto esperado em 90 dias e metas por fase</p></div>
-          <span class="chip mono">pós-Fase 0</span>
         </div>
         <div class="grid">
           <div class="card pad0" style="grid-column:span 12">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Projeção de impacto</h3><div class="sub">Cenário conservador vs otimista · 90 dias</div></div></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>Métrica</th><th>Conservador</th><th>Otimista</th></tr></thead>
-              <tbody>
-                <tr><td>Tráfego orgânico (90 dias)</td><td class="mono" style="color:var(--green)">+30%</td><td class="mono" style="color:var(--green)">+50%</td></tr>
-                <tr><td>Páginas indexadas</td><td class="mono">44 → 60+</td><td class="mono">44 → 70+</td></tr>
-                <tr><td>CTR médio no SERP</td><td class="mono">+10%</td><td class="mono">+20%</td></tr>
-                <tr><td>Core Web Vitals pass</td><td class="mono">LCP &lt; 2,5 s</td><td class="mono">LCP &lt; 2,0 s</td></tr>
-                <tr><td>Rich snippets</td><td class="mono">0 → 30+</td><td class="mono">0 → 44</td></tr>
-              </tbody>
+            <div class="tblwrap"><table id="kwtbl">
+              <thead><tr>
+                <th class="s" data-k="keyword">Keyword<span class="ar">↓</span></th>
+                <th class="s" data-k="cluster">Cluster<span class="ar">↓</span></th>
+                <th class="s" data-k="priority">Prioridad<span class="ar">↓</span></th>
+                <th class="s num" data-k="volume">Volumen<span class="ar">↓</span></th>
+                <th class="s num" data-k="cpc">CPC<span class="ar">↓</span></th>
+                <th class="s" data-k="sd">Dificultad<span class="ar">↓</span></th>
+                <th class="s" data-k="intent">Intención<span class="ar">↓</span></th>
+                <th class="s" data-k="position">Posición<span class="ar">↓</span></th>
+                <th class="s" data-k="status">Lectura<span class="ar">↓</span></th>
+              </tr></thead>
+              <tbody id="kwbody"></tbody>
             </table></div>
-            <div class="note" style="margin:14px 16px 16px">O schema markup pode gerar ganho imediato de CTR de <b>+20% a +30%</b> nas páginas de serviço. O setor de polarizado em Las Vegas tem alta competência local e baixa maturidade SEO: quem estrutura primeiro o SEO local com conteúdo de qualidade domina as posições — “Vegas heat” é o ângulo diferenciador.</div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 7">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>KPIs de acompanhamento</h3><div class="sub">Fechamento por fase · base para o Sprint 2</div></div></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>KPI</th><th>Fase 0</th><th>Fase 1</th><th>Fase 2</th><th>Fase 3</th></tr></thead>
-              <tbody>
-                <tr><td>Páginas com schema</td><td class="mono">0 → 100%</td><td class="mono">100%</td><td class="mono">100%</td><td class="mono">100%</td></tr>
-                <tr><td>H1 único e posicionável</td><td class="mono">45% → 100%</td><td class="mono">100%</td><td class="mono">100%</td><td class="mono">100%</td></tr>
-                <tr><td>Titles sem duplicação/recorte</td><td class="mono">66% → 80%</td><td class="mono">80% → 100%</td><td class="mono">100%</td><td class="mono">100%</td></tr>
-                <tr><td>Metas únicas de 120–155</td><td class="mono">86% → 100%</td><td class="mono">100%</td><td class="mono">100%</td><td class="mono">100%</td></tr>
-                <tr><td>Imagens &gt; 100 KB</td><td class="mono">180</td><td class="mono">180 → 0</td><td class="mono">0</td><td class="mono">0</td></tr>
-                <tr><td>URLs lentas (2–3 s)</td><td class="mono">28 → 14</td><td class="mono">14 → 0</td><td class="mono">0</td><td class="mono">0</td></tr>
-                <tr><td>Thin content (&lt; 400)</td><td class="mono">3</td><td class="mono">3 → 1</td><td class="mono">1 → 0</td><td class="mono">0</td></tr>
-                <tr><td>Erros 4xx internos</td><td class="mono">1 → 0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td></tr>
-              </tbody>
-            </table></div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 5">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Riscos &amp; mitigação</h3><div class="sub">O que pode atrasar o plano</div></div></div>
-            <div class="tblwrap"><table class="risks" style="table-layout:fixed">
-              <colgroup><col style="width:40%"><col style="width:14%"><col style="width:46%"></colgroup>
-              <thead><tr><th>Risco</th><th>Prob.</th><th>Mitigação</th></tr></thead>
-              <tbody>
-                <tr><td>Saltar a Fase 0 por pressa</td><td>Média</td><td>Não iniciar sem schema + H1 + 404.</td></tr>
-                <tr><td>Galeria pesada frena o LCP</td><td>Alta</td><td>Comprimir top 20 JPGs &gt; 500 KB antes de conteúdo novo.</td></tr>
-                <tr><td>Elementor limita schema/headers</td><td>Média</td><td>JSON-LD manual + headers no servidor.</td></tr>
-                <tr><td>Concorrência local estabelecida</td><td>Alta</td><td>Nichos ceramic/PPF + reviews + GBP + “Vegas heat”.</td></tr>
-              </tbody>
-            </table></div>
-          </div>
-
-          <div class="card" style="grid-column:span 12">
-            <div class="cardhead"><div><h3>Próximos passos</h3><div class="sub">Ordem de execução acordada</div></div></div>
-            <ol class="checklist">
-              <li><span class="n">1</span><span><b>Agendar a Fase 0 (22 h)</b> — bloqueante do sprint.</span></li>
-              <li><span class="n">2</span><span>Corrigir o 404 <code>LINK_DA_GALERIA</code> → <b>/gallery/</b> (1 enlace interno).</span></li>
-              <li><span class="n">3</span><span>Validar schema em rich results + GSC com sitemap.</span></li>
-              <li><span class="n">4</span><span>Fechar a Fase 1 → <b>relatório mensal 1</b>.</span></li>
-              <li><span class="n">5</span><span>Fechar a Fase 2 → <b>relatório mensal 2</b> (GBP + reviews).</span></li>
-              <li><span class="n">6</span><span>Fechar a Fase 3 → <b>relatório mensal 3</b> + plano do Sprint 2.</span></li>
-            </ol>
+            <div class="pager"><span id="pginfo"></span><div class="btns">
+              <button id="pgprev">← Anterior</button><span class="pg" id="pgnum"></span><button id="pgnext">Siguiente →</button>
+            </div></div>
           </div>
         </div>
       </section>
 
-      <!-- ================= INDEXATION ================= -->
-      <section class="view" id="view-indexation">
+      <!-- COMPETITION -->
+      <section class="view" id="view-competition">
         <div class="vhead">
-          <div><h1>Indexação</h1><p>Cobertura do Search Console · 15/07 a 08/10/2026</p></div>
-          <span class="chip mono">GSC · export 13/10</span>
+          <div><h1>Competencia</h1><p>Benchmark de dominios y presencia en las SERPs analizadas</p></div>
+          <span class="chip mono" id="compchip">—</span>
         </div>
         <div class="grid">
-          <div class="kpis">
-            <div class="kpi"><span class="lab">Indexadas</span><span class="val">14</span><span class="foot">último dia da série · 08/10</span></div>
-            <div class="kpi"><span class="lab">Não indexadas</span><span class="val">40</span><span class="foot">74% das páginas conhecidas</span></div>
-            <div class="kpi"><span class="lab">Impressões</span><span class="val">11.952</span><span class="foot">86 dias · 15/07 a 08/10</span></div>
-            <div class="kpi"><span class="lab">Média diária</span><span class="val">139</span><span class="foot">últimos 30 dias: 94/dia</span></div>
-          </div>
-
-          <div class="card" style="grid-column:span 8">
-            <div class="cardhead"><div><h3>Impressões no Google</h3><div class="sub">Série diária · 86 pontos</div></div><span class="tag">GSC</span></div>
-            <div id="chartImp"></div>
-          </div>
-
-          <div class="card" style="grid-column:span 4">
-            <div class="cardhead"><div><h3>Motivos de não indexação</h3><div class="sub">40 páginas · 08/10</div></div></div>
-            <div class="hrow"><span class="nm">Rastreada, não indexada</span><span class="tr"><i style="width:100%"></i></span><span class="vl">15</span></div>
-            <div class="hrow"><span class="nm">Detectada, não indexada</span><span class="tr"><i style="width:80%"></i></span><span class="vl">12</span></div>
-            <div class="hrow"><span class="nm">Com redirect</span><span class="tr"><i style="width:46.7%"></i></span><span class="vl">7</span></div>
-            <div class="hrow"><span class="nm">Excluída por noindex</span><span class="tr"><i style="width:33.3%"></i></span><span class="vl">5</span></div>
-            <div class="hrow"><span class="nm">404</span><span class="tr"><i style="width:6.7%"></i></span><span class="vl">1</span></div>
-            <div class="hint" style="margin-top:10px">O bloco “rastreada/detectada, não indexada” soma 27 páginas — é o principal alvo de qualidade e links internos.</div>
-          </div>
-
-          <div class="card" style="grid-column:span 6">
-            <div class="cardhead"><div><h3>Indexadas vs não indexadas</h3><div class="sub">Série desde 23/07 · GSC</div></div></div>
-            <div id="chartIdx"></div>
-            <div class="stlegend"><span><i style="background:#2C7A4E"></i>Indexadas</span><span><i style="background:#C2410C"></i>Não indexadas</span></div>
-          </div>
-
-          <div class="card" style="grid-column:span 6">
-            <div class="cardhead"><div><h3>Crawl vs Search Console</h3><div class="sub">Dois retratos diferentes — e complementares</div></div></div>
-            <div class="note"><b>Crawl (Screaming Frog):</b> 276 URLs rastreadas, 266 indexáveis e 44 HTML indexáveis. <b>GSC:</b> 54 páginas conhecidas, 14 indexadas e 40 não indexadas. O GSC conta a cobertura da propriedade (incluindo URLs sem HTML e variações); o crawl mostra o que o site entrega. A leitura conjunta aponta para <b>qualidade e autoridade</b>, não para bloqueio técnico: canonicals, HTTPS e sitemap estão corretos.</div>
-            <div class="hint" style="margin-top:10px">Impressões por mês: jul 2.713 · ago 5.144 · set 3.089 · out (1–8) 1.006.</div>
-          </div>
-
-          <div class="card pad0" style="grid-column:span 12">
-            <div class="cardhead" style="padding:16px 16px 0"><div><h3>Problemas críticos de cobertura</h3><div class="sub">Export de 13/10/2026</div></div></div>
-            <div class="tblwrap"><table>
-              <thead><tr><th>Motivo</th><th>Fonte</th><th>Validação</th><th class="num">Páginas</th></tr></thead>
-              <tbody>
-                <tr><td>Página com redirecionamento</td><td>Site</td><td>Não iniciado</td><td class="num">7</td></tr>
-                <tr><td>Não encontrado (404)</td><td>Site</td><td>Não iniciado</td><td class="num">1</td></tr>
-                <tr><td>Rastreada, mas não indexada</td><td>Sistemas do Google</td><td>Não iniciado</td><td class="num">15</td></tr>
-                <tr><td>Detectada, mas não indexada</td><td>Sistemas do Google</td><td>Não iniciado</td><td class="num">12</td></tr>
-                <tr><td>Excluída pela tag noindex</td><td>Site</td><td>Iniciado</td><td class="num">5</td></tr>
-              </tbody>
-            </table></div>
-          </div>
+          <div class="card" style="grid-column:span 6" id="card-comp-kw"></div>
+          <div class="card" style="grid-column:span 6" id="card-comp-tr"></div>
+          <div class="card pad0" style="grid-column:span 12" id="card-comp-tbl"></div>
+          <div class="card" style="grid-column:span 6" id="card-serpfreq"></div>
+          <div class="card" style="grid-column:span 6" id="card-comp-notes"></div>
         </div>
       </section>
 
-      <!-- ================= METHOD ================= -->
+      <!-- SERP -->
+      <section class="view" id="view-serp">
+        <div class="vhead">
+          <div><h1>SERPs</h1><p>Resultados orgánicos por keyword · quién ocupa la primera página</p></div>
+          <span class="chip mono" id="serpchip">—</span>
+        </div>
+        <div class="tabs" id="serptabs" style="margin-bottom:14px"></div>
+        <div class="grid">
+          <div class="card pad0" style="grid-column:span 12" id="card-serp-tbl"></div>
+        </div>
+      </section>
+
+      <!-- DEMAND -->
+      <section class="view" id="view-demand">
+        <div class="vhead">
+          <div><h1>Demanda</h1><p>Estacionalidad y volumen de búsqueda del portafolio monitoreado</p></div>
+          <div class="aside tabs">
+            <button class="tab on" data-heat="heat">Mapa de calor</button>
+            <button class="tab" data-heat="table">Tabla</button>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card" style="grid-column:span 12" id="card-didx"></div>
+          <div class="card pad0" style="grid-column:span 12" id="card-heat"></div>
+        </div>
+      </section>
+
+      <!-- METHOD -->
       <section class="view" id="view-method">
         <div class="vhead">
-          <div><h1>Metodologia</h1><p>De onde vem cada número deste painel</p></div>
-          <span class="chip mono">v1.0 · out/2026</span>
+          <div><h1>Metodología</h1><p>Cómo se calcula cada número de este panel</p></div>
+          <span class="chip mono" id="methodchip">v—</span>
         </div>
-        <div class="md">
-          <div class="card">
-            <h3>Fontes dos dados</h3>
-            <p><b>Auditoria técnica:</b> Screaming Frog SEO Spider, 35 CSVs, crawl de 276 URLs (266 indexáveis, 10 não indexáveis) e 44 HTML indexáveis · out/2026. <b>Cobertura:</b> export do Google Search Console de 13/10/2026, com série diária de 15/07 a 08/10/2026. <b>Contexto de negócio:</b> diagnóstico de Google Ads de jun/2026 (82,44% das interações são ligações). <b>Monitoramento futuro:</b> projeto Ubersuggest diamondtintlv.com · US/en · desktop (loc 2840), com 3M, LLumar, Sun Stopper, Tint World e XPEL como concorrentes.</p>
-          </div>
-          <div class="card">
-            <h3>Como a nota 6,1/10 é lida</h3>
-            <p>É a nota composta da auditoria: 26 achados ponderados por severidade (5 críticos, 7 altos, 8 médios e 6 informativos). Não é média de posições nem de tráfego — é um retrato de saúde técnica e estrutural do site no momento do crawl.</p>
-          </div>
-          <div class="card">
-            <h3>Como o esforço é calculado</h3>
-            <p>Cada ação tem horas estimadas por especialidade (Dev, SEO, Copy, Design). O total soma <b>137 h</b>: 22 h da Fase 0 (pré-requisito) + 115 h do sprint de 3 meses (Fases 1 a 3). Os achados médios e informativos entram como manutenção contínua e não inflam o esforço das fases.</p>
-          </div>
-          <div class="card">
-            <h3>O que este painel ainda não tem</h3>
-            <p>Posições, volumes de busca, CPC, dificuldade e SERPs. Esses dados exigem uma <b>primeira varredura do Ubersuggest</b> para a Diamond — o projeto existe, mas a baseline ainda não foi coletada. Quando ela entrar, o painel ganha as abas de Keywords, Concorrência, SERPs e Demanda, no mesmo padrão dos outros clientes. <b>Nenhum número de posição é estimado ou interpolado.</b></p>
-          </div>
-          <div class="card">
-            <h3>Escopo e limites</h3>
-            <ul>
-              <li>Auditoria estrutural de crawl: não inclui dados de GSC por query nem receita.</li>
-              <li>Impressões e cobertura refletem a propriedade do Search Console, não o total do domínio.</li>
-              <li>Projeções (+30–50%) são cenários da auditoria, não garantia de resultado.</li>
-              <li>O painel não substitui o relatório completo — ele resume e monitora.</li>
-            </ul>
-            <div class="auditlinks"><a href="auditoria/" target="_blank" rel="noopener">Abrir auditoria completa →</a><a href="https://diamondtintlv.com/" target="_blank" rel="noopener">Ver site →</a></div>
-          </div>
-        </div>
+        <div class="md" id="method-cards"></div>
       </section>
-
     </div>
   </main>
 </div>
 
-<script>const IMP=[["2026-07-15",288],["2026-07-16",98],["2026-07-17",113],["2026-07-18",40],["2026-07-19",155],["2026-07-20",74],["2026-07-21",84],["2026-07-22",240],["2026-07-23",146],["2026-07-24",170],["2026-07-25",105],["2026-07-26",247],["2026-07-27",151],["2026-07-28",136],["2026-07-29",339],["2026-07-30",121],["2026-07-31",206],["2026-08-01",139],["2026-08-02",192],["2026-08-03",107],["2026-08-04",156],["2026-08-05",157],["2026-08-06",123],["2026-08-07",186],["2026-08-08",102],["2026-08-09",273],["2026-08-10",145],["2026-08-11",154],["2026-08-12",264],["2026-08-13",76],["2026-08-14",169],["2026-08-15",210],["2026-08-16",296],["2026-08-17",117],["2026-08-18",154],["2026-08-19",134],["2026-08-20",119],["2026-08-21",186],["2026-08-22",281],["2026-08-23",205],["2026-08-24",152],["2026-08-25",159],["2026-08-26",234],["2026-08-27",100],["2026-08-28",175],["2026-08-29",102],["2026-08-30",138],["2026-08-31",139],["2026-09-01",94],["2026-09-02",188],["2026-09-03",140],["2026-09-04",167],["2026-09-05",105],["2026-09-06",237],["2026-09-07",165],["2026-09-08",178],["2026-09-09",167],["2026-09-10",113],["2026-09-11",134],["2026-09-12",114],["2026-09-13",117],["2026-09-14",89],["2026-09-15",121],["2026-09-16",61],["2026-09-17",49],["2026-09-18",122],["2026-09-19",43],["2026-09-20",54],["2026-09-21",39],["2026-09-22",98],["2026-09-23",95],["2026-09-24",63],["2026-09-25",55],["2026-09-26",41],["2026-09-27",45],["2026-09-28",45],["2026-09-29",61],["2026-09-30",89],["2026-10-01",118],["2026-10-02",122],["2026-10-03",64],["2026-10-04",135],["2026-10-05",124],["2026-10-06",259],["2026-10-07",109],["2026-10-08",75]];</script>
-<script>const IDX=[["2026-07-23",12,60],["2026-07-24",12,56],["2026-07-25",12,56],["2026-07-26",12,56],["2026-07-27",12,56],["2026-07-28",12,56],["2026-07-29",12,56],["2026-07-30",12,56],["2026-07-31",12,56],["2026-08-01",12,56],["2026-08-02",12,56],["2026-08-03",12,56],["2026-08-04",12,56],["2026-08-05",13,54],["2026-08-06",13,54],["2026-08-07",13,54],["2026-08-08",13,54],["2026-08-09",13,54],["2026-08-10",13,54],["2026-08-11",13,54],["2026-08-12",13,54],["2026-08-13",13,54],["2026-08-14",13,51],["2026-08-15",13,51],["2026-08-16",13,51],["2026-08-17",13,51],["2026-08-18",13,51],["2026-08-19",13,51],["2026-08-20",13,51],["2026-08-21",13,45],["2026-08-22",13,45],["2026-08-23",13,45],["2026-08-24",13,45],["2026-08-25",13,45],["2026-08-26",13,45],["2026-08-27",13,45],["2026-08-28",13,45],["2026-08-29",13,45],["2026-08-30",13,45],["2026-08-31",13,45],["2026-09-01",13,45],["2026-09-02",13,45],["2026-09-03",13,45],["2026-09-04",13,43],["2026-09-05",13,43],["2026-09-06",13,43],["2026-09-07",13,43],["2026-09-08",13,43],["2026-09-09",13,43],["2026-09-10",13,43],["2026-09-11",13,43],["2026-09-12",13,43],["2026-09-13",13,43],["2026-09-14",13,41],["2026-09-15",13,41],["2026-09-16",13,41],["2026-09-17",13,41],["2026-09-18",13,41],["2026-09-19",13,41],["2026-09-20",13,41],["2026-09-21",14,40],["2026-09-22",14,40],["2026-09-23",14,40],["2026-09-24",14,40],["2026-09-25",14,40],["2026-09-26",14,40],["2026-09-27",14,40],["2026-09-28",14,40],["2026-09-29",14,40],["2026-09-30",14,40],["2026-10-01",14,40],["2026-10-02",14,40],["2026-10-03",14,40],["2026-10-04",14,40],["2026-10-05",14,40],["2026-10-06",14,40],["2026-10-07",14,40],["2026-10-08",14,40]];</script>
+<div id="overlay"></div>
+<div id="toast"></div>
+<aside id="drawer"></aside>
+<div id="tooltip" style="position:fixed;pointer-events:none;z-index:80;opacity:0;transition:opacity .12s;background:#fff;border:1px solid var(--line2);border-radius:9px;padding:9px 11px;font-size:11px;box-shadow:0 12px 30px rgba(26,22,19,.12);color:var(--txt);max-width:260px"></div>
+
+<script>const DATA = {"meta":{"client":"Diamond Tint & Wraps","full_name":"Diamond Tint & Wraps","domain":"diamondtintlv.com","baseline_date":"2026-11-11","last_read":"2026-11-11","next_update":"2026-11-18","location":"Estados Unidos (nacional)","language":"en","device":"desktop","tool":"Ubersuggest (MCP)","keyword_limit":125,"keywords_used":50,"project_id":"461b019a9705a3171a60478997cd456574496ca7f5b05c25e8b8614dffbb8824","periods":["202504","202505","202506","202507","202508","202509","202510","202511","202512","202601","202602","202603"],"slug":"diamond","initials":"DT","motor":"Google.com (EE. UU.)","version":"1.0","legacy_path":null,"ov_zero_note":"Proyecto creado hoy en el slot US de Ubersuggest: el primer barrido de posiciones aún no cerró, así que las <b>50 de 50</b> keywords figuran como \"pending\". Mientras tanto, el dominio ya muestra <b>72 keywords orgánicas</b> y DA 16 en la lectura de dominio de Ubersuggest.","cluster_colors":{"Local · Cerca de mí":"#2F6FD0","Tintado Automotriz":"#7757C4","Tintado Residencial":"#DE4B31","Tintado Cerámico":"#2A9468","PPF y Protección":"#C74A81","Recubrimiento Cerámico":"#C4861C"},"refresh":{"loc_id":2840,"language":"en","device":"desktop"},"clients":[{"slug":"premium","name":"Premium Cleaning NJ","initials":"PC","url":"../premium/"},{"slug":"lola","name":"Lola Aviamentos","initials":"LA","url":"../lola/"},{"slug":"brasland","name":"Brasland","initials":"BR","url":"../brasland/"},{"slug":"all-over","name":"All Over","initials":"AL","url":"../all-over/"},{"slug":"diamond","name":"Diamond Tint & Wraps","initials":"DT","url":"../diamond/"}]},"kpis":{"tracked":50,"top3":0,"top10":0,"top20":0,"top100":0,"checked":0,"volume":4555230,"volume_addressable":3560740,"sov":0,"avg_position":null,"pending":50},"keywords":[{"keyword":"window tinting near me","cluster":"Local · Cerca de mí","priority":"P1","volume":450000,"cpc":4.685,"sd":15,"intent":"Transactional","competition":0.53,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":550000},{"p":"202505","v":450000},{"p":"202506","v":450000},{"p":"202507","v":450000},{"p":"202508","v":368000},{"p":"202509","v":368000},{"p":"202510","v":450000}]},{"keyword":"auto tint near me","cluster":"Local · Cerca de mí","priority":"P1","volume":368000,"cpc":6.24,"sd":27,"intent":"Transactional","competition":0.66,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":301000},{"p":"202511","v":246000},{"p":"202512","v":246000},{"p":"202601","v":301000},{"p":"202602","v":301000},{"p":"202603","v":450000}]},{"keyword":"automotive tint near me","cluster":"Local · Cerca de mí","priority":"P1","volume":368000,"cpc":6.24,"sd":21,"intent":"Transactional","competition":0.66,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":301000},{"p":"202511","v":246000},{"p":"202512","v":246000},{"p":"202601","v":301000},{"p":"202602","v":301000},{"p":"202603","v":450000}]},{"keyword":"vehicle tint near me","cluster":"Local · Cerca de mí","priority":"P3","volume":368000,"cpc":5.21,"sd":56,"intent":"Transactional","competition":0.75,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":450000},{"p":"202508","v":368000},{"p":"202509","v":368000},{"p":"202510","v":301000},{"p":"202511","v":246000},{"p":"202512","v":246000},{"p":"202601","v":301000},{"p":"202602","v":301000},{"p":"202603","v":450000}]},{"keyword":"window tinting close to me","cluster":"Local · Cerca de mí","priority":"P1","volume":368000,"cpc":5.62,"sd":30,"intent":"Commercial","competition":0.63,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":550000},{"p":"202505","v":450000},{"p":"202506","v":450000},{"p":"202507","v":450000},{"p":"202508","v":368000},{"p":"202509","v":368000},{"p":"202510","v":301000},{"p":"202511","v":246000},{"p":"202512","v":246000},{"p":"202601","v":301000},{"p":"202602","v":301000},{"p":"202603","v":368000}]},{"keyword":"windshield tinting near me","cluster":"Local · Cerca de mí","priority":"P1","volume":368000,"cpc":4.69,"sd":19,"intent":"Transactional","competition":0.66,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":550000},{"p":"202505","v":450000},{"p":"202506","v":450000},{"p":"202507","v":450000},{"p":"202508","v":368000},{"p":"202509","v":368000},{"p":"202510","v":301000},{"p":"202511","v":246000},{"p":"202512","v":246000},{"p":"202601","v":301000},{"p":"202602","v":301000},{"p":"202603","v":450000}]},{"keyword":"tints window tinting","cluster":"Tintado Automotriz","priority":"P3","volume":201000,"cpc":3.88,"sd":69,"intent":null,"competition":0.88,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202505","v":301000},{"p":"202506","v":301000},{"p":"202507","v":246000},{"p":"202508","v":246000},{"p":"202509","v":201000},{"p":"202510","v":201000},{"p":"202511","v":165000},{"p":"202512","v":165000},{"p":"202601","v":165000},{"p":"202602","v":165000},{"p":"202603","v":246000}]},{"keyword":"window tint","cluster":"Tintado Automotriz","priority":"P3","volume":201000,"cpc":3.84,"sd":51,"intent":"Transactional","competition":0.87,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":246000},{"p":"202508","v":246000},{"p":"202509","v":201000},{"p":"202510","v":201000},{"p":"202511","v":165000},{"p":"202512","v":165000},{"p":"202601","v":165000},{"p":"202602","v":165000},{"p":"202603","v":246000}]},{"keyword":"tint near me","cluster":"Local · Cerca de mí","priority":"P1","volume":90500,"cpc":6.03,"sd":27,"intent":"Transactional","competition":0.74,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":90500},{"p":"202511","v":74000},{"p":"202512","v":74000},{"p":"202601","v":74000},{"p":"202602","v":90500},{"p":"202603","v":135000}]},{"keyword":"tint shop near me","cluster":"Local · Cerca de mí","priority":"P2","volume":90500,"cpc":6.46,"sd":35,"intent":"Transactional","competition":0.74,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":90500},{"p":"202511","v":74000},{"p":"202512","v":74000},{"p":"202601","v":74000},{"p":"202602","v":90500},{"p":"202603","v":135000}]},{"keyword":"auto window tinting","cluster":"Tintado Automotriz","priority":"P2","volume":74000,"cpc":3.16,"sd":35,"intent":"Transactional","competition":0.28,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":74000},{"p":"202505","v":74000},{"p":"202506","v":90500},{"p":"202507","v":110000},{"p":"202508","v":110000},{"p":"202509","v":74000}]},{"keyword":"auto window tinting near me","cluster":"Local · Cerca de mí","priority":"P1","volume":74000,"cpc":4.265,"sd":27,"intent":"Transactional","competition":0.49,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":90500},{"p":"202505","v":74000},{"p":"202506","v":74000},{"p":"202507","v":90500},{"p":"202508","v":74000},{"p":"202509","v":60500},{"p":"202510","v":74000}]},{"keyword":"automotive window tinting near me","cluster":"Local · Cerca de mí","priority":"P2","volume":74000,"cpc":4.23,"sd":44,"intent":null,"competition":0.56,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":90500},{"p":"202505","v":74000},{"p":"202506","v":74000},{"p":"202507","v":90500},{"p":"202508","v":74000},{"p":"202509","v":60500},{"p":"202510","v":49500},{"p":"202511","v":74000}]},{"keyword":"car window tinting near me","cluster":"Local · Cerca de mí","priority":"P1","volume":74000,"cpc":4.265,"sd":15,"intent":"Transactional","competition":0.49,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":90500},{"p":"202505","v":74000},{"p":"202506","v":74000},{"p":"202507","v":90500},{"p":"202508","v":74000},{"p":"202509","v":60500},{"p":"202510","v":74000}]},{"keyword":"car windscreen tint","cluster":"Tintado Automotriz","priority":"P1","volume":74000,"cpc":3.98,"sd":28,"intent":"Transactional","competition":0.75,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":110000},{"p":"202508","v":110000},{"p":"202509","v":74000},{"p":"202510","v":60500},{"p":"202511","v":49500},{"p":"202512","v":49500},{"p":"202601","v":90500},{"p":"202602","v":49500},{"p":"202603","v":74000}]},{"keyword":"automotive window tint","cluster":"Tintado Automotriz","priority":"P2","volume":60500,"cpc":4.3,"sd":42,"intent":"Transactional","competition":0.75,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":60500},{"p":"202511","v":49500},{"p":"202512","v":49500},{"p":"202601","v":90500},{"p":"202602","v":49500},{"p":"202603","v":74000}]},{"keyword":"car glass tinting near me","cluster":"Local · Cerca de mí","priority":"P3","volume":60500,"cpc":4.01,"sd":46,"intent":null,"competition":0.76,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":90500},{"p":"202508","v":74000},{"p":"202509","v":60500},{"p":"202510","v":49500},{"p":"202511","v":49500},{"p":"202512","v":40500},{"p":"202601","v":40500},{"p":"202602","v":49500},{"p":"202603","v":60500}]},{"keyword":"car window tint","cluster":"Tintado Automotriz","priority":"P2","volume":60500,"cpc":4.3,"sd":37,"intent":"Transactional","competition":0.75,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":60500},{"p":"202511","v":49500},{"p":"202512","v":49500},{"p":"202601","v":90500},{"p":"202602","v":49500},{"p":"202603","v":74000}]},{"keyword":"vehicle window tinting near me","cluster":"Local · Cerca de mí","priority":"P1","volume":60500,"cpc":5.52,"sd":20,"intent":"Transactional","competition":0.69,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":49500},{"p":"202511","v":49500},{"p":"202512","v":40500},{"p":"202601","v":40500},{"p":"202602","v":49500},{"p":"202603","v":60500}]},{"keyword":"auto ceramic coating","cluster":"Recubrimiento Cerámico","priority":"P2","volume":49500,"cpc":6.31,"sd":40,"intent":"Transactional","competition":0.95,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202508","v":74000},{"p":"202509","v":60500},{"p":"202510","v":60500},{"p":"202511","v":40500},{"p":"202512","v":40500},{"p":"202601","v":49500},{"p":"202602","v":49500},{"p":"202603","v":49500}]},{"keyword":"automotive ceramic coating","cluster":"Recubrimiento Cerámico","priority":"P2","volume":49500,"cpc":6.32,"sd":32,"intent":"Transactional","competition":0.96,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":60500},{"p":"202511","v":40500},{"p":"202512","v":40500},{"p":"202601","v":49500},{"p":"202602","v":49500},{"p":"202603","v":49500}]},{"keyword":"car tint near me","cluster":"Local · Cerca de mí","priority":"P1","volume":49500,"cpc":6.03,"sd":27,"intent":"Transactional","competition":0.81,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":49500},{"p":"202511","v":40500},{"p":"202512","v":40500},{"p":"202601","v":40500},{"p":"202602","v":49500},{"p":"202603","v":74000}]},{"keyword":"ceramic coating car","cluster":"Recubrimiento Cerámico","priority":"P2","volume":49500,"cpc":6.32,"sd":38,"intent":"Transactional","competition":0.96,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":60500},{"p":"202511","v":40500},{"p":"202512","v":40500},{"p":"202601","v":49500},{"p":"202602","v":49500},{"p":"202603","v":49500}]},{"keyword":"house window tint","cluster":"Tintado Residencial","priority":"P3","volume":49500,"cpc":4.71,"sd":47,"intent":"Transactional","competition":0.8,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":49500},{"p":"202505","v":49500},{"p":"202506","v":60500},{"p":"202507","v":49500},{"p":"202508","v":40500},{"p":"202509","v":33100},{"p":"202510","v":49500}]},{"keyword":"paint protection film","cluster":"PPF y Protección","priority":"P2","volume":49500,"cpc":10.74,"sd":34,"intent":"Transactional","competition":0.32,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":49500},{"p":"202511","v":40500},{"p":"202512","v":60500},{"p":"202601","v":74000},{"p":"202602","v":40500},{"p":"202603","v":40500}]},{"keyword":"ppf","cluster":"PPF y Protección","priority":"P2","volume":49500,"cpc":10.74,"sd":40,"intent":"Informational","competition":0.32,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":49500},{"p":"202511","v":40500},{"p":"202512","v":60500},{"p":"202601","v":74000},{"p":"202602","v":40500},{"p":"202603","v":40500}]},{"keyword":"ceramic tint","cluster":"Tintado Cerámico","priority":"P1","volume":40500,"cpc":4.13,"sd":28,"intent":"Transactional","competition":0.95,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":27100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":40500}]},{"keyword":"home window tinting","cluster":"Tintado Residencial","priority":"P3","volume":40500,"cpc":4.695,"sd":49,"intent":null,"competition":0.85,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":49500},{"p":"202505","v":60500},{"p":"202506","v":60500},{"p":"202507","v":49500},{"p":"202508","v":40500},{"p":"202509","v":33100},{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":40500}]},{"keyword":"home windows with tint","cluster":"Tintado Residencial","priority":"P2","volume":40500,"cpc":5.07,"sd":45,"intent":null,"competition":0.93,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":49500},{"p":"202505","v":60500},{"p":"202506","v":60500},{"p":"202507","v":49500},{"p":"202508","v":40500},{"p":"202509","v":33100},{"p":"202510","v":33100},{"p":"202511","v":40500}]},{"keyword":"limo tint for home windows","cluster":"Tintado Residencial","priority":"P2","volume":40500,"cpc":5.07,"sd":45,"intent":null,"competition":0.93,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":49500},{"p":"202505","v":60500},{"p":"202506","v":60500},{"p":"202507","v":49500},{"p":"202508","v":40500},{"p":"202509","v":33100},{"p":"202510","v":33100},{"p":"202511","v":40500}]},{"keyword":"ppf on car","cluster":"PPF y Protección","priority":"P3","volume":40500,"cpc":8.9,"sd":59,"intent":"Transactional","competition":0.16,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202506","v":40500},{"p":"202507","v":49500},{"p":"202508","v":40500},{"p":"202509","v":40500},{"p":"202510","v":40500},{"p":"202511","v":33100},{"p":"202512","v":40500},{"p":"202601","v":40500},{"p":"202602","v":33100},{"p":"202603","v":33100}]},{"keyword":"car tint","cluster":"Tintado Automotriz","priority":"P1","volume":33100,"cpc":5.3,"sd":27,"intent":"Transactional","competition":0.89,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":27100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":40500}]},{"keyword":"car tint ceramic","cluster":"Tintado Cerámico","priority":"P1","volume":33100,"cpc":3.1,"sd":26,"intent":"Transactional","competition":0.91,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202506","v":40500},{"p":"202507","v":40500},{"p":"202508","v":33100},{"p":"202509","v":33100},{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":18100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":49500}]},{"keyword":"ceramic auto tint","cluster":"Tintado Cerámico","priority":"P1","volume":33100,"cpc":3.38,"sd":19,"intent":"Transactional","competition":0.93,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":40500},{"p":"202508","v":33100},{"p":"202509","v":33100},{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":18100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":49500}]},{"keyword":"ceramic auto window tint","cluster":"Tintado Cerámico","priority":"P1","volume":33100,"cpc":3.38,"sd":25,"intent":"Transactional","competition":0.93,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":40500},{"p":"202508","v":33100},{"p":"202509","v":33100},{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":18100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":49500}]},{"keyword":"ceramic car tint","cluster":"Tintado Cerámico","priority":"P1","volume":33100,"cpc":3.8,"sd":22,"intent":"Transactional","competition":0.92,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":18100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":49500}]},{"keyword":"ceramic window film","cluster":"Tintado Cerámico","priority":"P1","volume":33100,"cpc":3.8,"sd":25,"intent":"Transactional","competition":0.92,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":18100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":49500}]},{"keyword":"ceramic window tint","cluster":"Tintado Cerámico","priority":"P1","volume":33100,"cpc":3.8,"sd":19,"intent":"Transactional","competition":0.92,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":18100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":49500}]},{"keyword":"ppf car","cluster":"PPF y Protección","priority":"P2","volume":33100,"cpc":12.44,"sd":35,"intent":"Transactional","competition":0.24,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":40500},{"p":"202511","v":33100},{"p":"202512","v":40500},{"p":"202601","v":40500},{"p":"202602","v":33100},{"p":"202603","v":33100}]},{"keyword":"tint car","cluster":"Tintado Automotriz","priority":"P3","volume":33100,"cpc":3.8,"sd":55,"intent":null,"competition":0.9,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202507","v":40500},{"p":"202508","v":40500},{"p":"202509","v":33100},{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":27100},{"p":"202601","v":27100},{"p":"202602","v":27100},{"p":"202603","v":40500}]},{"keyword":"window privacy window film","cluster":"Tintado Residencial","priority":"P2","volume":33100,"cpc":1.835,"sd":45,"intent":null,"competition":1,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202505","v":40500},{"p":"202506","v":40500},{"p":"202507","v":40500},{"p":"202508","v":40500},{"p":"202509","v":40500},{"p":"202510","v":40500},{"p":"202511","v":33100},{"p":"202512","v":27100},{"p":"202601","v":33100},{"p":"202602","v":33100},{"p":"202603","v":40500}]},{"keyword":"ceramic tint for windows","cluster":"Tintado Cerámico","priority":"P2","volume":27100,"cpc":3.1,"sd":31,"intent":null,"competition":0.57,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202504","v":27100},{"p":"202505","v":33100},{"p":"202506","v":40500},{"p":"202507","v":40500},{"p":"202508","v":33100},{"p":"202509","v":33100},{"p":"202510","v":22200},{"p":"202511","v":22200},{"p":"202512","v":27100}]},{"keyword":"household window tint","cluster":"Tintado Residencial","priority":"P2","volume":27100,"cpc":5.68,"sd":23,"intent":"Transactional","competition":0.98,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":18100},{"p":"202601","v":22200},{"p":"202602","v":22200},{"p":"202603","v":33100}]},{"keyword":"paint protection film near me","cluster":"PPF y Protección","priority":"P2","volume":27100,"cpc":12.95,"sd":13,"intent":"Transactional","competition":0.29,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":40500},{"p":"202511","v":14800},{"p":"202512","v":27100},{"p":"202601","v":33100},{"p":"202602","v":33100},{"p":"202603","v":33100}]},{"keyword":"ppf near me","cluster":"PPF y Protección","priority":"P2","volume":27100,"cpc":12.95,"sd":18,"intent":"Navigational","competition":0.29,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":40500},{"p":"202511","v":14800},{"p":"202512","v":27100},{"p":"202601","v":33100},{"p":"202602","v":33100},{"p":"202603","v":33100}]},{"keyword":"window film","cluster":"Tintado Residencial","priority":"P2","volume":27100,"cpc":1.14,"sd":30,"intent":"Transactional","competition":1,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":27100},{"p":"202511","v":27100},{"p":"202512","v":22200},{"p":"202601","v":27100},{"p":"202602","v":22200},{"p":"202603","v":27100}]},{"keyword":"window film tint home","cluster":"Tintado Residencial","priority":"P2","volume":27100,"cpc":5.68,"sd":19,"intent":"Transactional","competition":0.98,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":18100},{"p":"202601","v":22200},{"p":"202602","v":22200},{"p":"202603","v":33100}]},{"keyword":"window tint for home windows","cluster":"Tintado Residencial","priority":"P2","volume":27100,"cpc":5.68,"sd":12,"intent":"Transactional","competition":0.98,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202510","v":33100},{"p":"202511","v":27100},{"p":"202512","v":18100},{"p":"202601","v":22200},{"p":"202602","v":22200},{"p":"202603","v":33100}]},{"keyword":"paint protection near me","cluster":"PPF y Protección","priority":"P3","volume":390,"cpc":5.49,"sd":47,"intent":"Transactional","competition":0.29,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202508","v":320},{"p":"202509","v":320},{"p":"202510","v":590},{"p":"202511","v":260},{"p":"202512","v":210},{"p":"202601","v":320},{"p":"202602","v":480},{"p":"202603","v":390}]},{"keyword":"tin window car","cluster":"Tintado Automotriz","priority":"P2","volume":140,"cpc":0,"sd":32,"intent":null,"competition":0.63,"position":null,"url":null,"status":"pending","checked_date":null,"monthly":[{"p":"202505","v":210},{"p":"202506","v":90},{"p":"202507","v":40},{"p":"202508","v":170},{"p":"202509","v":170},{"p":"202510","v":170},{"p":"202511","v":110},{"p":"202512","v":110},{"p":"202601","v":110},{"p":"202602","v":110},{"p":"202603","v":210}]}],"clusters":[{"name":"Local · Cerca de mí","n":14,"volume":2863500,"sd_sum":409,"sd_avg":29,"series":[{"p":"202504","v":130.2,"n":6},{"p":"202505","v":106.5,"n":6},{"p":"202506","v":106.5,"n":6},{"p":"202507","v":124.5,"n":8},{"p":"202508","v":101.8,"n":8},{"p":"202509","v":92.2,"n":8},{"p":"202510","v":93.0,"n":14},{"p":"202511","v":82.1,"n":11},{"p":"202512","v":76.8,"n":10},{"p":"202601","v":85.0,"n":10},{"p":"202602","v":93.9,"n":10},{"p":"202603","v":133.0,"n":10}]},{"name":"Tintado Automotriz","n":9,"volume":737340,"sd_sum":376,"sd_avg":42,"series":[{"p":"202504","v":83.4,"n":1},{"p":"202505","v":125.1,"n":3},{"p":"202506","v":101.9,"n":3},{"p":"202507","v":110.1,"n":6},{"p":"202508","v":125.9,"n":6},{"p":"202509","v":100.2,"n":6},{"p":"202510","v":100.4,"n":8},{"p":"202511","v":79.5,"n":8},{"p":"202512","v":79.5,"n":8},{"p":"202601","v":102.9,"n":8},{"p":"202602","v":79.5,"n":8},{"p":"202603","v":123.0,"n":8}]},{"name":"Tintado Residencial","n":9,"volume":312500,"sd_sum":315,"sd_avg":35,"series":[{"p":"202504","v":108.3,"n":4},{"p":"202505","v":122.9,"n":5},{"p":"202506","v":127.6,"n":5},{"p":"202507","v":108.3,"n":5},{"p":"202508","v":92.6,"n":5},{"p":"202509","v":79.6,"n":5},{"p":"202510","v":102.4,"n":9},{"p":"202511","v":93.3,"n":8},{"p":"202512","v":76.9,"n":6},{"p":"202601","v":90.3,"n":5},{"p":"202602","v":86.5,"n":5},{"p":"202603","v":119.5,"n":5}]},{"name":"Tintado Cerámico","n":8,"volume":266200,"sd_sum":195,"sd_avg":24,"series":[{"p":"202504","v":87.5,"n":1},{"p":"202505","v":106.8,"n":1},{"p":"202506","v":130.0,"n":2},{"p":"202507","v":131.8,"n":4},{"p":"202508","v":107.7,"n":4},{"p":"202509","v":107.7,"n":4},{"p":"202510","v":79.8,"n":8},{"p":"202511","v":77.3,"n":8},{"p":"202512","v":68.7,"n":8},{"p":"202601","v":92.6,"n":7},{"p":"202602","v":92.6,"n":7},{"p":"202603","v":164.9,"n":7}]},{"name":"PPF y Protección","n":7,"volume":227190,"sd_sum":246,"sd_avg":35,"series":[{"p":"202504","v":0,"n":0},{"p":"202505","v":0,"n":0},{"p":"202506","v":103.4,"n":1},{"p":"202507","v":126.3,"n":1},{"p":"202508","v":96.0,"n":2},{"p":"202509","v":96.0,"n":2},{"p":"202510","v":119.8,"n":7},{"p":"202511","v":71.9,"n":7},{"p":"202512","v":98.3,"n":7},{"p":"202601","v":115.9,"n":7},{"p":"202602","v":97.9,"n":7},{"p":"202603","v":94.3,"n":7}]},{"name":"Recubrimiento Cerámico","n":3,"volume":148500,"sd_sum":110,"sd_avg":37,"series":[{"p":"202504","v":0,"n":0},{"p":"202505","v":0,"n":0},{"p":"202506","v":0,"n":0},{"p":"202507","v":0,"n":0},{"p":"202508","v":139.5,"n":1},{"p":"202509","v":114.0,"n":1},{"p":"202510","v":121.5,"n":3},{"p":"202511","v":81.3,"n":3},{"p":"202512","v":81.3,"n":3},{"p":"202601","v":99.4,"n":3},{"p":"202602","v":99.4,"n":3},{"p":"202603","v":99.4,"n":3}]}],"demand":[{"p":"202504","v":115.4,"n":12},{"p":"202505","v":115.7,"n":15},{"p":"202506","v":114.5,"n":17},{"p":"202507","v":118.8,"n":24},{"p":"202508","v":107.5,"n":26},{"p":"202509","v":95.1,"n":26},{"p":"202510","v":99.3,"n":49},{"p":"202511","v":81.2,"n":45},{"p":"202512","v":79.7,"n":42},{"p":"202601","v":97.1,"n":40},{"p":"202602","v":91.0,"n":40},{"p":"202603","v":125.6,"n":40}],"domains":{"diamondtintlv.com":{"organic":72,"traffic":18,"domainAuthority":16,"backlinks":1508,"refDomains":249,"paidKeywords":0},"3mwindowfilm.com":{"organic":0,"traffic":0,"domainAuthority":15,"backlinks":381,"refDomains":84,"paidKeywords":0},"llumar.com":{"organic":4138,"traffic":17274,"domainAuthority":49,"backlinks":86054,"refDomains":5263,"paidKeywords":0},"solargard.com":{"organic":3319,"traffic":7191,"domainAuthority":44,"backlinks":76095,"refDomains":4204,"paidKeywords":0},"sunstopper.com":{"organic":0,"traffic":0,"domainAuthority":5,"backlinks":72,"refDomains":70,"paidKeywords":0},"tintworld.com":{"organic":97504,"traffic":1421327,"domainAuthority":43,"backlinks":228996,"refDomains":4973,"paidKeywords":0}},"serps":{"window tinting near me":[{"pos":5,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=Napa, CA","title":"THE BEST 10 CAR WINDOW TINTING IN NAPA, CA","clicks":235084,"da":93},{"pos":6,"domain":"rydrdieautodetailing.com","url":"http://www.rydrdieautodetailing.com/window-tinting","title":"Car Window Tinting Tallahassee, FL","clicks":107478,"da":3},{"pos":7,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Car Window Tint&find_loc=Honolulu, HI","title":"TOP 10 BEST Car Window Tint in Honolulu, HI - Yelp","clicks":65561,"da":93},{"pos":8,"domain":"tintingnearme.com","url":"http://www.tintingnearme.com/washington","title":"Find Washington Window Tinting News, Reviews, and ...","clicks":569,"da":18},{"pos":9,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=Selbyville, DE 19975","title":"THE BEST 10 CAR WINDOW TINTING NEAR SELBYVILLE ...","clicks":2458,"da":93},{"pos":10,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=Indianapolis, IN 46240","title":"THE BEST 10 CAR WINDOW TINTING NEAR ...","clicks":2277,"da":93},{"pos":11,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Cheap Window Tinting&find_loc=Dothan, AL","title":"TOP 10 BEST Cheap Window Tinting in Dothan, AL","clicks":2216,"da":93},{"pos":12,"domain":"autoimagerva.com","url":"http://www.autoimagerva.com/window-tinting","title":"Window Tinting Richmond VA | Professional Auto Tinting","clicks":1888,"da":10}],"auto tint near me":[{"pos":4,"domain":"austintinting.com","url":"http://www.austintinting.com/","title":"Austin Tint - Austins Premier Window Tinting Specialist","clicks":152647,"da":16},{"pos":5,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Car Window Tint&find_loc=Alexandria, VA","title":"TOP 10 BEST Car Window Tint in Alexandria, VA","clicks":71466,"da":93},{"pos":6,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=Yuma, AZ","title":"THE BEST 10 CAR WINDOW TINTING IN YUMA, AZ","clicks":65514,"da":93},{"pos":7,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=Saint Louis, MO 63125","title":"THE BEST 10 CAR WINDOW TINTING NEAR SAINT ...","clicks":474,"da":93},{"pos":8,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Window Tint&find_loc=Shreveport, LA","title":"TOP 10 BEST Window Tint in Shreveport, LA - (2026 Guide)","clicks":1184,"da":93},{"pos":9,"domain":"facebook.com","url":"http://www.facebook.com/groups/200597954582833/posts/1610553500253931/","title":"Window tint for cars in Tulsa, OK","clicks":1060,"da":96},{"pos":10,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Window Tinting&find_loc=Murrieta, CA","title":"TOP 10 BEST Window Tinting in Murrieta, CA - (2026 Guide)","clicks":1006,"da":93},{"pos":11,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Mobile Auto Window Tinting&find_loc=Lake Havasu City, AZ","title":"TOP 10 BEST Mobile Auto Window Tinting in Lake Havasu ...","clicks":722,"da":93}],"automotive tint near me":[{"pos":4,"domain":"premiertintcoatings.com","url":"http://www.premiertintcoatings.com/","title":"Premier Tint & Coatings | Window Tinting Lafayette, LA","clicks":152722,"da":4},{"pos":5,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=San Antonio, TX","title":"THE BEST 10 CAR WINDOW TINTING IN SAN ANTONIO, TX","clicks":71466,"da":93},{"pos":6,"domain":"yelp.com","url":"http://www.yelp.com/search?cflt=carwindowtinting&find_loc=Benton, AR","title":"THE BEST 10 CAR WINDOW TINTING IN BENTON, AR","clicks":65514,"da":93},{"pos":7,"domain":"ficksdetailing.com","url":"http://www.ficksdetailing.com/window-tint-saginaw/","title":"Window Tinting in Saginaw, MI","clicks":474,"da":10},{"pos":8,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Window Tinting&find_loc=Anchorage, AK","title":"TOP 10 BEST Window Tinting in Anchorage, AK","clicks":1184,"da":93},{"pos":9,"domain":"tint360az.com","url":"http://tint360az.com/","title":"TINT 360: Auto Window Tinting Phoenix AZ | PPF & Ceramic ...","clicks":1060,"da":11},{"pos":10,"domain":"recondetail.com","url":"http://recondetail.com/window-tinting-tucson-az/","title":"Window Tinting Tucson AZ","clicks":1006,"da":14},{"pos":11,"domain":"yelp.com","url":"http://www.yelp.com/search?find_desc=Car Window Tinting&find_loc=El Paso, TX","title":"TOP 10 BEST Car Window Tinting in El Paso, TX","clicks":722,"da":93}]},"serpFreq":[["yelp.com",15],["rydrdieautodetailing.com",1],["tintingnearme.com",1],["autoimagerva.com",1],["austintinting.com",1],["facebook.com",1],["premiertintcoatings.com",1],["ficksdetailing.com",1],["tint360az.com",1],["recondetail.com",1]],"limits":{"keywords":{"limit":125,"used":50},"locations":{"limit":20,"used":1},"competitors":{"limit":5,"used":5},"add_ons":{}},"position_bands":[{"date":"2026-11-11","total":50,"bands":{"top3":0,"top410":0,"top1120":0,"top2150":0,"top51100":0,"out":50},"avg_position":null}],"seo_snapshot":{"date":"2026-11-11","onPageScore":99,"organicKeywords":72,"organicTraffic":18,"estimatedValue":null,"estimatedValueLocked":true,"backlinks":1508,"domainAuthority":16,"source":"Ubersuggest · domain_overview + site_audit"},"traffic_history":[{"p":"202511","v":82},{"p":"202512","v":66},{"p":"202601","v":225},{"p":"202602","v":230},{"p":"202603","v":342},{"p":"202604","v":19},{"p":"202605","v":268},{"p":"202606","v":260},{"p":"202607","v":32},{"p":"202608","v":256},{"p":"202609","v":18},{"p":"202610","v":18}],"method_cards":[{"h3":"Fuente de los datos","html":"Posiciones orgánicas, volúmenes, CPC y dificultad vienen de <b>Ubersuggest</b> (API/MCP) para <b>Estados Unidos · en · desktop</b> (loc 2840). Las keywords están en inglés porque es el idioma de búsqueda del mercado; solo este panel está traducido al español. Ninguna posición se interpola."},{"h3":"Primera lectura (baseline)","html":"El proyecto se creó el <b>11/11/2026</b> con 50 keywords y 5 competidores. El primer barrido de posiciones todavía no cerró: las 50 keywords están en \"pending\" y la frecuencia de actualización del proyecto es <b>semanal</b>. El historial de posiciones empieza a acumularse desde esta lectura."},{"h3":"Alcance geográfico","html":"El proyecto mide posiciones a nivel <b>nacional (EE. UU.)</b>. Las búsquedas \"near me\" dependen de la ubicación del usuario y del pack local, por eso conviene sumar <b>Las Vegas</b> como localización adicional del proyecto (hay 19 cupos libres) para medir el rendimiento local real."},{"h3":"Clusters y prioridad","html":"Los clusters son de negocio: Local · Cerca de mí, Tintado Automotriz, Tintado Cerámico, Tintado Residencial, PPF y Protección, Recubrimiento Cerámico. <b>P1</b> = SD ≤ 30 y ≥ 30 mil búsquedas/mes; <b>P2</b> = SD ≤ 45; <b>P3</b> = resto. \"Volumen abordable\" suma las keywords con SD ≤ 45."},{"h3":"SERPs analizadas","html":"Se muestran las SERPs cuyo Top 8 orgánico llegó completo desde la última colección de Ubersuggest (3 de las 8 keywords de mayor volumen; el resto devolvió una colección parcial y quedó fuera para no mostrar tablas incompletas). Los clics son una estimación de la fuente, no tráfico real. Demanda: los volúmenes mensuales vienen de la caché de Ubersuggest y cada keyword tiene su serie actualizada hasta meses distintos; la ventana abr/25–mar/26 es la de mayor cobertura (las 50 keywords con ≥ 6 meses). El tráfico orgánico del dominio sí llega hasta oct/26. Los bloques especiales (pack local, People Also Ask, AI Overview) no cuentan como posición orgánica."},{"h3":"Alcance y límites","html":"Plan actual: <b>50 de 125</b> keywords monitoreadas, 1 localización y 5 competidores (3M, Llumar, Solar Gard, Sun Stopper, Tint World). <b>Estimated Value</b> no se muestra: el scope devuelve 403."}],"competitive_notes":[{"b":"Dominio pequeño con base real de orgánico.","t":"diamondtintlv.com tiene DA 16, 1.508 backlinks (249 dominios de referencia) y 72 keywords orgánicas, con tráfico estimado de 18 visitas/mes en octubre (pico de 342 en marzo). Hay base indexada, pero casi nada en posiciones que traigan clics."},{"b":"Tint World juega en otra liga.","t":"Tint World concentra 97.504 keywords orgánicas y ~1,4 millones de visitas/mes (DA 43); Llumar (DA 49) y Solar Gard (DA 44) son fabricantes de película con miles de keywords. No son el rival directo en Las Vegas: son referencia de ceiling de la categoría."},{"b":"3M y Sun Stopper no mueven aguja orgánica.","t":"Ambos aparecen con 0 keywords orgánicas y DA 15 y 5. Como competidores del proyecto aportan poco; vale reemplazarlos por talleres locales de Las Vegas (p. ej. All Tint LV, que ya aparece en el pack local de \"window tinting near me\")."},{"b":"Yelp domina las SERPs \"near me\".","t":"En las 3 SERPs completas, Yelp ocupa 15 de las 24 posiciones orgánicas del Top 8. La oportunidad está en Google Business Profile, reseñas y páginas de servicio + ciudad que compitan por el pack local y desplacen a los directorios."}]};</script>
 <script>
-const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
-const fmt=n=>Number(n).toLocaleString('pt-BR');
-const CLIENTS=[
-  {slug:'premium',name:'Premium Cleaning NJ',initials:'PC',url:'../premium/'},
-  {slug:'lola',name:'Lola Aviamentos',initials:'LA',url:'../lola/'},
-  {slug:'brasland',name:'Brasland',initials:'BR',url:'../brasland/'},
-  {slug:'all-over',name:'All Over',initials:'AL',url:'../all-over/'},
-  {slug:'diamond',name:'Diamond Tint & Wraps',initials:'DT',url:'../diamond/'}
-];
-const TITLES={overview:'Visão geral',diagnosis:'Diagnóstico',plan:'Plano',projection:'Projeção',indexation:'Indexação',method:'Metodologia'};
+/* ---------- helpers ---------- */
+const D = DATA;
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const fmt = n => (n==null||n==='')?'—':Number(n).toLocaleString('es-US');
+const fmt1 = n => (n==null)?'—':Number(n).toLocaleString('es-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+const MONTHS=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const mlab = p => MONTHS[+p.slice(4,6)-1]+'/'+p.slice(2,4);
+const PRIO={P1:3,P2:2,P3:1};
+const DFL_CL={'Comercial':'#DE4B31','Marca':'#C4861C','Peças':'#2F6FD0','Tonelagem':'#2A9468','Aplicação':'#7757C4','Modelo':'#C74A81','Serviço':'#2A8E9D','Comparativo':'#6E7683'};
+const CC=Object.assign({},DFL_CL,D.meta.cluster_colors||{});
+const ccol = c => CC[c]||'#6E7683';
+const INTENT={'Transactional':'Transaccional','Commercial':'Comercial','Informational':'Informacional','Navigational':'Navegacional','Other':''};
+const itr = i => INTENT[i]!==undefined?(INTENT[i]||'—'):(i||'—');
+const CTR = p => !p?0 : p<=1?.28 : p===2?.15 : p===3?.10 : p<=5?.07 : p<=10?.04 : p<=20?.015 : p<=50?.005 : 0;
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tip = $('#tooltip');
+function showTip(e,html){tip.innerHTML=html;tip.style.opacity=1;moveTip(e);}
+function moveTip(e){const r=tip.getBoundingClientRect();let x=e.clientX+14,y=e.clientY+14;if(x+r.width>innerWidth-8)x=e.clientX-r.width-14;if(y+r.height>innerHeight-8)y=e.clientY-r.height-14;tip.style.left=x+'px';tip.style.top=y+'px';}
+function hideTip(){tip.style.opacity=0;}
 
-/* ---------- clientes ---------- */
-$('#cpop').innerHTML='<div class="csh">Clientes · Traffic Analytics</div>'+CLIENTS.map(c=>{
-  const cur=c.slug==='diamond';
-  return `<a class="csopt${cur?' on':''}" href="${c.url}" role="option" aria-selected="${cur}" style="text-decoration:none">
-    <span class="oi">${c.initials}</span><span class="oname">${c.name}</span>
-    <span class="oic ${cur?'ck':'nv'}">${cur?'<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>':'<svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'}</span>
-  </a>`;
-}).join('');
-$('#csel').addEventListener('click',e=>{e.stopPropagation();const w=$('#cselwrap');w.classList.toggle('open');$('#csel').setAttribute('aria-expanded',w.classList.contains('open'));});
-document.addEventListener('click',e=>{if(!e.target.closest('#cselwrap')){$('#cselwrap').classList.remove('open');$('#csel').setAttribute('aria-expanded','false')}});
-
-/* ---------- navegação ---------- */
-try{localStorage.setItem('ta-lastclient','diamond')}catch(_){}
-function go(view){
-  state.view=view;
-  $$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.view===view));
-  $$('.view').forEach(v=>v.classList.toggle('on',v.id==='view-'+view));
-  $('#crumb').textContent=TITLES[view]||'';
-  try{history.replaceState(null,'','#'+view)}catch(_){}
-  $('#content').scrollTop=0;
+/* ---------- state ---------- */
+const state={view:'overview',cluster:'',prio:'',q:'',months:12,sort:{k:'volume',d:-1},page:1,per:12,off:new Set(),serpKw:Object.keys(D.serps)[0],heat:'heat',oppPage:0};
+const periods = () => D.meta.periods.slice(-state.months);
+function filtered(){
+  const q=state.q.trim().toLowerCase();
+  return D.keywords.filter(k=>(!state.cluster||k.cluster===state.cluster)&&(!state.prio||k.priority===state.prio)&&(!q||k.keyword.toLowerCase().includes(q)||k.cluster.toLowerCase().includes(q)));
 }
-const state={view:'overview'};
-$$('#nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
-if(location.hash&&TITLES[location.hash.slice(1)])go(location.hash.slice(1));
-window.addEventListener('hashchange',()=>{const v=location.hash.slice(1);if(TITLES[v])go(v)});
+function idxSeries(ks,ps){
+  return ps.map(p=>{
+    const vals=[];
+    ks.forEach(k=>{
+      const pts=k.monthly.filter(x=>ps.includes(x.p));
+      if(!pts.length)return;
+      const mean=pts.reduce((a,b)=>a+b.v,0)/pts.length; if(mean<=0)return;
+      const hit=k.monthly.find(x=>x.p===p); if(!hit)return;
+      vals.push(hit.v/mean*100);
+    });
+    return {p,v:vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null,n:vals.length};
+  });
+}
+const sum=(a,f)=>a.reduce((s,x)=>s+f(x),0);
 
-/* ---------- gauge ---------- */
-(function(){
-  const C=2*Math.PI*54, pct=6.1/10;
-  const arc=$('#gaugeArc');
-  arc.setAttribute('stroke-dasharray',`${(C*pct).toFixed(1)} ${(C*(1-pct)).toFixed(1)}`);
-})();
-
-/* ---------- filtro do diagnóstico ---------- */
-$$('#sevTabs .tab').forEach(t=>t.addEventListener('click',()=>{
-  $$('#sevTabs .tab').forEach(x=>x.classList.toggle('on',x===t));
-  const s=t.dataset.sev;
-  $$('#findings .finding').forEach(f=>f.classList.toggle('hide',s!=='all'&&f.dataset.sev!==s));
-}));
-
-/* ---------- gráficos ---------- */
-function chart(el,series,{h=250,minZero=true,labelEvery=0}={}){
-  const W=920,H=h,m={l:48,r:14,t:16,b:30};
-  const all=series.flatMap(s=>s.points.map(p=>p[1]));
-  let lo=Math.min(...all),hi=Math.max(...all);
-  if(minZero)lo=0;
-  const pad=(hi-lo)*.12||10; lo=Math.max(0,lo-pad); hi+=pad;
-  const X=i=>m.l+i*(W-m.l-m.r)/(series[0].points.length-1);
+/* ---------- charts ---------- */
+function axisLabels(W,H,m,ps){
+  const st=Math.max(1,Math.ceil((ps.length-1)/4));
+  return ps.map((p,i)=>{
+    if(i!==ps.length-1 && i%st) return '';
+    const x=m.l+(i*(W-m.l-m.r))/(ps.length-1||1);
+    return `<text x="${x}" y="${H-m.b+16}" fill="#9B9389" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">${mlab(p)}</text>`;
+  }).join('');
+}
+function emptyBox(msg,sub=''){
+  return `<div class="empty"><b>${esc(msg)}</b>${sub?esc(sub):''}</div>`;
+}
+function lineChart(series,ps,{h=280,w=940,unit='',base=null,area=true}={}){
+  const W=w,H=h,m={l:48,r:16,t:14,b:28};
+  const all=series.flatMap(s=>s.data).filter(d=>d.v!=null);
+  if(!all.length)return emptyBox('Sin datos en el período');
+  let lo=Math.min(...all.map(d=>d.v)),hi=Math.max(...all.map(d=>d.v));
+  if(base!=null){lo=Math.min(lo,base);hi=Math.max(hi,base);}
+  const pad=(hi-lo)*.14||5; lo-=pad; hi+=pad;
+  const X=i=>m.l+(i*(W-m.l-m.r))/(ps.length-1||1);
   const Y=v=>m.t+(1-(v-lo)/(hi-lo))*(H-m.t-m.b);
-  const raw=(hi-lo)/4, mag=Math.pow(10,Math.floor(Math.log10(raw))), norm=raw/mag;
+  let grid='';const raw=(hi-lo)/4, mag=Math.pow(10,Math.floor(Math.log10(raw))), norm=raw/mag;
   const step=(norm<=1?1:norm<=2?2:norm<=2.5?2.5:norm<=5?5:10)*mag;
-  let grid='';
+  const dec=step<1?2:step<10?1:0;
   for(let v=Math.ceil(lo/step)*step;v<=hi+1e-9;v+=step){
     const y=Y(v);
     grid+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="#EAE5DD" stroke-width="1"/>`;
-    grid+=`<text x="${m.l-8}" y="${y+3}" fill="#9B9389" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="end">${fmt(Math.round(v))}</text>`;
+    grid+=`<text x="${m.l-8}" y="${y+3}" fill="#9B9389" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="end">${v.toLocaleString('es-US',{minimumFractionDigits:dec,maximumFractionDigits:dec})}</text>`;
   }
   let paths='';
-  series.forEach((s,si)=>{
-    let d='';
-    s.points.forEach((p,i)=>{d+=(i?' L':' M')+X(i).toFixed(1)+' '+Y(p[1]).toFixed(1)});
+  series.forEach(s=>{
+    let d='',started=false;
+    s.data.forEach((p,i)=>{
+      if(p.v==null){started=false;return;}
+      d+=(started?' L':' M')+X(i).toFixed(1)+' '+Y(p.v).toFixed(1);started=true;
+    });
+    if(!d)return;
     if(s.area){
-      const gid='g'+si;
-      paths+=`<defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${s.color}" stop-opacity=".18"/><stop offset="1" stop-color="${s.color}" stop-opacity="0"/></linearGradient></defs>`;
-      paths+=`<path d="${d} L${X(s.points.length-1).toFixed(1)} ${H-m.b} L${m.l} ${H-m.b} Z" fill="url(#${gid})"/>`;
+      const pts=s.data.map((p,i)=>p.v==null?null:[X(i),Y(p.v)]).filter(Boolean);
+      if(pts.length){
+        const ar=`M${pts[0][0].toFixed(1)} ${(H-m.b)} `+pts.map(p=>`L${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(' ')+` L${pts[pts.length-1][0].toFixed(1)} ${H-m.b} Z`;
+        paths+=`<defs><linearGradient id="g${s.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${s.color}" stop-opacity=".22"/><stop offset="1" stop-color="${s.color}" stop-opacity="0"/></linearGradient></defs><path d="${ar}" fill="url(#g${s.id})"/>`;
+      }
     }
-    paths+=`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    paths+=`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.w||2}" stroke-linejoin="round" stroke-linecap="round" ${s.dash?'stroke-dasharray="4 4"':''}/>`;
   });
-  const pts=series[0].points;
-  const nlab=6;
-  let xlab='';
-  for(let i=0;i<nlab;i++){
-    const idx=Math.round(i*(pts.length-1)/(nlab-1));
-    const p=pts[idx], x=X(idx), dd=p[0].slice(8,10), mm=p[0].slice(5,7);
-    xlab+=`<text x="${x}" y="${H-m.b+17}" fill="#9B9389" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">${dd}/${mm}</text>`;
-  }
-  const tip=series[0].points.map((p,i)=>`<circle cx="${X(i)}" cy="${Y(p[1])}" r="2.4" fill="${series[0].color}" opacity=".55"><title>${p[0]} · ${fmt(p[1])}</title></circle>`).join('');
-  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;overflow:visible">${grid}${paths}${tip}${xlab}</svg>`;
+  let baseLine='';
+  if(base!=null)baseLine=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(base)}" y2="${Y(base)}" stroke="#CFC8BC" stroke-width="1" stroke-dasharray="2 4"/>`;
+  const hover=series.map(s=>`<circle class="hp" data-id="${s.id}" r="3.2" fill="${s.color}" stroke="#FFFFFF" stroke-width="1.5" opacity="0"/>`).join('');
+  return `<div style="position:relative"><svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;overflow:visible" data-chart="line">
+    ${grid}${baseLine}
+    <line class="hv" y1="${m.t}" y2="${H-m.b}" stroke="#CFC8BC" stroke-width="1" stroke-dasharray="2 3" opacity="0"/>
+    ${paths}${hover}
+    ${axisLabels(W,H,m,ps)}
+  </svg></div>`;
 }
-chart($('#chartImp'),[{color:'#E31919',area:true,points:IMP}]);
-chart($('#chartIdx'),[
-  {color:'#2C7A4E',area:false,points:IDX.map(r=>[r[0],r[1]])},
-  {color:'#C2410C',area:false,points:IDX.map(r=>[r[0],r[2]])}
-]);
+function bindLine(holder,series,ps,h=280,base=null,unit='',w=940){
+  const svg=holder.querySelector('svg'); if(!svg)return;
+  const W=w,m={l:48,r:16,t:14,b:28},H=h;
+  const hv=svg.querySelector('.hv'),hs=Array.from(svg.querySelectorAll('.hp'));
+  svg.addEventListener('mousemove',e=>{
+    const r=svg.getBoundingClientRect();
+    const vx=(e.clientX-r.left)*(W/r.width);
+    let i=Math.round((vx-m.l)/((W-m.l-m.r)/(ps.length-1||1)));
+    i=Math.max(0,Math.min(ps.length-1,i));
+    const x=m.l+(i*(W-m.l-m.r))/(ps.length-1||1);
+    hv.setAttribute('x1',x);hv.setAttribute('x2',x);hv.setAttribute('opacity','1');
+    let html=`<div class="mono" style="color:var(--txt);font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">${mlab(ps[i])}</div>`;
+    let k=0;
+    series.forEach(s=>{
+      const p=s.data[i]; const c=hs[k++];
+      if(!p||p.v==null){c&&c.setAttribute('opacity','0');return;}
+      c&&c.setAttribute('cx',x);
+      // recompute Y using chart scale stored on svg
+      const sc=svg._scale; const y=sc?sc(p.v):0;
+      c&&c.setAttribute('cy',y);c&&c.setAttribute('opacity','1');
+      html+=`<div style="display:flex;justify-content:space-between;gap:14px;line-height:1.9"><span style="color:var(--muted)"><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${s.color};margin-right:6px"></i>${esc(s.name)}</span><b class="mono" style="font-weight:500">${fmt1(p.v)}${unit}</b></div>`;
+      if(p.n && series.length===1)html+=`<div style="color:var(--dim);font-size:9.5px">${p.n} keywords en el cálculo</div>`;
+    });
+    showTip(e,html);
+  });
+  svg.addEventListener('mouseleave',()=>{hv.setAttribute('opacity','0');hs.forEach(c=>c.setAttribute('opacity','0'));hideTip();});
+  // store scale
+  const all=series.flatMap(s=>s.data).filter(d=>d.v!=null);
+  let lo=Math.min(...all.map(d=>d.v)),hi=Math.max(...all.map(d=>d.v));
+  if(base!=null){lo=Math.min(lo,base);hi=Math.max(hi,base);}
+  const pad=(hi-lo)*.14||5;lo-=pad;hi+=pad;
+  svg._scale=v=>m.t+(1-(v-lo)/(hi-lo))*(H-m.t-m.b);
+}
+function spark(data,color,w=96,h=30){
+  const v=data.map(d=>d.v).filter(x=>x!=null); if(!v.length)return '';
+  const lo=Math.min(...v),hi=Math.max(...v);
+  const pts=v.map((x,i)=>`${(i*(w-2)/(v.length-1||1)+1).toFixed(1)},${(h-2-(hi===lo?h/2:(x-lo)/(hi-lo)*(h-4))).toFixed(1)}`).join(' ');
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="display:block"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" opacity=".85"/></svg>`;
+}
+function hbars(items,{color='#E31919',max=null}={}){
+  const mx=max||Math.max(...items.map(i=>i.value),1);
+  return `<div class="bars">`+items.map(i=>`
+    <div class="bar">
+      <span class="nm" title="${esc(i.label)}">${i.dot?`<i style="display:inline-block;width:6px;height:6px;border-radius:2px;background:${i.dot};margin-right:6px"></i>`:''}${esc(i.label)}</span>
+      <span class="vl">${i.display??fmt(i.value)}</span>
+      <span class="track"><span class="fill" style="width:${Math.max(i.value/mx*100,i.value?1.2:0)}%;background:${i.color||color}"></span></span>
+    </div>`).join('')+`</div>`;
+}
+function donut(segs,centerTop,centerSub){
+  const total=segs.reduce((a,s)=>a+s.value,0)||1;
+  const R=62,C=2*Math.PI*R;let off=0;
+  const circles=segs.map(s=>{
+    const len=s.value/total*C;
+    const el=`<circle cx="80" cy="80" r="${R}" fill="none" stroke="${s.color}" stroke-width="17" stroke-dasharray="${len} ${C-len}" stroke-dashoffset="${-off}" transform="rotate(-90 80 80)" stroke-linecap="butt"/>`;
+    off+=len;return el;
+  }).join('');
+  return `<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+    <svg viewBox="0 0 160 160" style="width:150px;height:150px">${circles||`<circle cx="80" cy="80" r="62" fill="none" stroke="#EDE9E2" stroke-width="17"/>`}
+      <text x="80" y="76" text-anchor="middle" fill="#1A1613" font-size="21" font-family="JetBrains Mono,monospace" font-weight="600">${centerTop}</text>
+      <text x="80" y="94" text-anchor="middle" fill="#9B9389" font-size="8.5" letter-spacing="1.4" font-family="JetBrains Mono,monospace">${centerSub}</text>
+    </svg>
+    <div style="width:100%;display:flex;flex-direction:column;gap:7px">${segs.map(s=>`<div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted)"><i style="width:7px;height:7px;border-radius:2px;background:${s.color}"></i><span style="flex:1">${esc(s.label)}</span><b class="mono" style="font-size:10.5px;color:var(--txt);font-weight:500">${fmt(s.value)}</b></div>`).join('')}</div>
+  </div>`;
+}
+
+/* ---------- stacked position bands ---------- */
+const BAND_DEF=[
+  ['top3','Top 3','#3FA96A'],
+  ['top410','4º–10º','#2C7A4E'],
+  ['top1120','11º–20º','#A2661A'],
+  ['top2150','21º–50º','#2F6FD0'],
+  ['top51100','51º–100º','#7757C4'],
+  ['out','Fuera del Top 100','#DCD6CC']
+];
+function stackChart(bands){
+  if(!bands||!bands.length)return emptyBox('Sem leituras registradas ainda');
+  const W=520,H=270,m={l:38,r:10,t:14,b:30};
+  const total=Math.max(...bands.map(b=>b.total||1));
+  const bw=Math.min(58,(W-m.l-m.r)/bands.length*.62);
+  const X=i=>m.l+(i+.5)*((W-m.l-m.r)/bands.length)-bw/2;
+  const Y=v=>m.t+(1-v/total)*(H-m.t-m.b);
+  let bars='',ticks='';
+  const st=total<=8?8:total<=25?5:total<=60?10:20;
+  for(let v=0;v<=total;v+=st){
+    ticks+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${v?'#EAE5DD':'#D7D1C6'}" stroke-width="1"/>
+      <text x="${m.l-6}" y="${Y(v)+3}" fill="#9B9389" font-size="9.5" text-anchor="end">${v}</text>`;
+  }
+  bands.forEach((b,i)=>{
+    let acc=0;
+    BAND_DEF.forEach(([k,_,c])=>{
+      const v=b.bands?.[k]||0; if(v<=0)return;
+      const y0=Y(acc+v),y1=Y(acc);
+      bars+=`<rect data-date="${esc(b.date)}" data-band="${k}" data-n="${v}" width="${bw}" height="${Math.max(y1-y0,0.6)}" x="${X(i).toFixed(1)}" y="${y0.toFixed(1)}" fill="${c}" fill-opacity=".88" stroke="#FBFAF8" stroke-width=".6" style="cursor:pointer"/>`;
+      acc+=v;
+    });
+  });
+  const xlab=bands.length===1
+    ?`<text x="${X(0)+bw/2}" y="${H-m.b+16}" fill="#9B9389" font-size="10" text-anchor="middle">${dshort(bands[0].date)}</text>`
+    :bands.map((b,i)=>`<text x="${X(i)+bw/2}" y="${H-m.b+16}" fill="#9B9389" font-size="9" text-anchor="middle"${i%2?'':' '}>${dshort(b.date).slice(0,5)}</text>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;overflow:visible" data-chart="stack">
+    ${ticks}${bars}${xlab}
+    <text transform="translate(10 ${(H)/2}) rotate(-90)" text-anchor="middle" fill="#9B9389" font-size="9.5" letter-spacing="1.2">KEYWORDS</text>
+  </svg>`;
+}
+function stackTip(){
+  $$('#card-poshist rect[data-band]').forEach(r=>{
+    r.addEventListener('mousemove',e=>{
+      const act=BAND_DEF.find(b=>b[0]===r.dataset.band);
+      showTip(e,`<b class="mono">${dshort(r.dataset.date)}</b><div style="margin-top:4px">${act[1]}: <b>${r.dataset.n}</b> keywords</div>`);
+    });
+    r.addEventListener('mouseleave',hideTip);
+  });
+}
+function renderSeoSnap(){
+  const S=D.seo_snapshot;
+  const dd=()=>S&&S.date?dshort(S.date):'';
+  const tiles=[
+    ['Puntaje on-page',S?S.onPageScore:null,fmt(S?S.onPageScore:null)+'/100',dd()?'Ubersuggest · '+dd():'Ubersuggest · auditoría'],
+    ['Keywords orgánicas',S?S.organicKeywords:null,fmt(S?S.organicKeywords:null),'indexadas en Google'],
+    ['Tráfico orgánico',S?S.organicTraffic:null,fmt(S?S.organicTraffic:null),'visitas/mes (estimación)'],
+    ['Valor estimado',S?(S.estimatedValue??null):null,fmt(S?(S.estimatedValue??null):null),S&&S.estimatedValueLocked?'restringido en el plan (403)':'US$/mes'],
+    ['Backlinks',S?S.backlinks:null,fmt(S?S.backlinks:null),'perfil de enlaces'],
+    ['Autoridad de dominio',S?S.domainAuthority:null,fmt(S?S.domainAuthority:null),'0–100 · referencia de autoridad']
+  ];
+  $('#card-seosnap').innerHTML=`
+    <div class="cardhead" style="padding:14px 16px 0"><div><h3>SEO snapshot</h3><div class="sub">Autoridad y presencia del dominio · ${esc(D.meta.tool||'Ubersuggest')}</div></div><span class="tag">${dd()||'sin lectura'}</span></div>
+    <div class="snapgrid" style="margin:12px 16px 14px">${tiles.map(([lab,v,disp,foot])=>`
+      <div class="snap">
+        <span class="lab">${esc(lab)}</span>
+        <span class="val ${v==null?'na':''}">${disp}</span>
+        <span class="foot">${esc(foot)}</span>
+      </div>`).join('')}</div>`;
+}
+
+/* ---------- overview ---------- */
+function renderOverview(){
+  const ks=filtered(),ps=periods(),dem=idxSeries(ks,ps);
+  const vol=sum(ks,k=>k.volume);
+  const top3=ks.filter(k=>k.position&&k.position<=3).length;
+  const top10=ks.filter(k=>k.position&&k.position<=10).length;
+  const top100=ks.filter(k=>k.position&&k.position<=100).length;
+  const sov=ks.length?sum(ks,k=>CTR(k.position))/ks.length*100:0;
+  const checked=ks.filter(k=>k.status==='ok'||k.status==='unstable').length;
+  const avgFirst=dem.filter(d=>d.v).slice(0,3), avgLast=dem.filter(d=>d.v).slice(-3);
+  const trend=(avgFirst.length&&avgLast.length)?((sum(avgLast,d=>d.v)/avgLast.length)/(sum(avgFirst,d=>d.v)/avgFirst.length)-1)*100:0;
+  const vsPrev = vol? (sum(ks,k=>k.volume)/Math.max(1,sum(D.keywords,k=>k.volume))*100):0;
+
+  $('#ovkpis').innerHTML=`
+    <div class="kpi">
+      <span class="lab">Demanda monitoreada</span>
+      <div class="val">${fmt(vol)}<small>/mes</small></div>
+      <div class="foot"><span>${ks.length} keywords en el filtro</span><span class="spark">${spark(dem,'#E31919')}</span></div>
+    </div>
+    <div class="kpi">
+      <span class="lab">Keywords en el Top 10</span>
+      <div class="val">${top10}<small>de ${ks.length}</small></div>
+      <div class="foot"><span>${top3} en el Top 3 · ${top100} en el Top 100</span><span class="delta flat">meta 5</span></div>
+    </div>
+    <div class="kpi">
+      <span class="lab">Cuota de voz (SOV)</span>
+      <div class="val">${fmt1(sov)}<small>%</small></div>
+      <div class="foot"><span>CTR estimado por posición</span><span class="delta ${sov>0?'up':'flat'}">${sov>0?'+':''}${fmt1(sov)} pp</span></div>
+    </div>
+    <div class="kpi">
+      <span class="lab">Cobertura de lectura</span>
+      <div class="val">${checked}<small>de ${ks.length}</small></div>
+      <div class="foot"><span>${Math.round(checked/Math.max(1,ks.length)*100)}% leídas · próxima ${dshort(D.meta.next_update)}</span><span class="delta ${trend>=0?'up':'dn'}">${trend>0?'+':''}${fmt1(trend)}% demanda</span></div>
+    </div>`;
+
+  const ranked=ks.filter(k=>k.position).sort((a,b)=>a.position-b.position);
+  const legacy=D.meta.legacy_path?ranked.filter(k=>k.url&&String(k.url).includes(D.meta.legacy_path)):[];
+  $('#ovinsight').innerHTML=`<div class="ico">!</div><p>${ranked.length
+    ? `<b>${ranked.length} keywords ya posicionan</b> — ${ranked.slice(0,3).map(k=>`${esc(k.keyword)} <span class="mono" style="font-size:10px;color:var(--red-600)">#${k.position}</span>`).join(', ')}. ${legacy.length?`${legacy.length} de esas posiciones apuntan a URLs heredadas <code style="font-family:var(--m)">${esc(D.meta.legacy_path)}</code>, que la migración de destino va a redirigir.`:''} Todavía <b>${ks.length-ranked.length} de ${ks.length}</b> están fuera del Top 100; próxima lectura el <b>${dshort(D.meta.next_update)}</b>.`
+    : `<b>La base cero es el estado inicial.</b> ${D.meta.ov_zero_note||'Ninguna posición registrada en la primera lectura.'} Con ${checked} de ${ks.length} keywords leídas y el próximo barrido el <b>${dshort(D.meta.next_update)}</b>, el movimiento real aparece en las próximas lecturas.`} El eje accionable ahora es <b>demanda × dificultad</b>: mira el radar de abajo.</p>`;
+
+  renderSeoSnap();
+
+  // position bands (histórico empilhado)
+  const bands=D.position_bands||[];
+  $('#card-poshist').innerHTML=`
+    <div class="cardhead"><div><h3>Keywords por rango de posición</h3><div class="sub">Historial por lectura · apilado por banda</div></div><div class="tools"><span class="tag">${bands.length} lectura${bands.length===1?'':'s'}</span></div></div>
+    <div class="stackchart">${stackChart(bands)}</div>
+    <div class="stlegend">${BAND_DEF.map(([k,label,c])=>`<span><i style="background:${c}"></i>${label}</span>`).join('')}</div>`;
+  stackTip();
+
+  // tráfego orgânico (histórico do domínio)
+  const tps=(D.traffic_history||[]).map(x=>x.p);
+  const tseries=(D.traffic_history||[]).length?[{id:'t',name:'Tráfico orgánico',color:'#E31919',data:D.traffic_history,area:true,w:2.2}]:[];
+  $('#card-trafhist').innerHTML=`
+    <div class="cardhead"><div><h3>Tráfico orgánico del dominio</h3><div class="sub">Visitas/mes · estimación ${esc(D.meta.tool||'Ubersuggest')}</div></div><div class="tools"><span class="tag">${tps.length} meses</span></div></div>
+    ${tseries.length?`<div id="traf-chart">${lineChart(tseries,tps,{h:268})}</div><div class="hint" style="margin-top:8px">Estimación de tráfico orgánico indexado: usa GSC/GA4 como referencia de verdad.</div>`:`<div style="padding:40px 20px">${emptyBox('Sem histórico de tráfego para este domínio','O Ubersuggest não retornou série mensal.')}</div>`}`;
+  if(tseries.length)bindLine($('#traf-chart'),tseries,tps,268);
+
+  // demand chart
+  const presentClusters=D.clusters.filter(c=>ks.some(k=>k.cluster===c.name));
+  const visibleClusters=presentClusters.filter(c=>!state.off.has(c.name));
+  const series=[{id:'tot',name:'Total del portafolio',color:'#E31919',data:dem,area:true,w:2.4}]
+    .concat(presentClusters.slice(0,4).filter(c=>!state.off.has(c.name)).map((c,i)=>({id:'c'+i,name:c.name,color:ccol(c.name),data:idxSeries(ks.filter(k=>k.cluster===c.name),ps),w:1.5,dash:true})));
+  $('#card-demand').innerHTML=`
+    <div class="cardhead"><div><h3>Índice de demanda</h3><div class="sub">Base 100 = promedio del período · estacionalidad del portafolio</div></div>
+    <div class="tools"><span class="tag" id="dem-n">${dem.filter(d=>d.v).length} meses</span></div></div>
+    <div id="dem-chart">${lineChart(series,ps,{h:268,base:100})}</div>
+    <div class="legend" id="dem-legend">
+      ${[{id:'tot',name:'Total',color:'#E31919'}].concat(presentClusters.slice(0,5).map(c=>({id:c.name,name:c.name,color:ccol(c.name)}))).map(s=>`<button class="lg ${s.id!=='tot'&&state.off.has(s.id)?'off':''}" data-s="${esc(s.id)}" data-cl="${s.id!=='tot'}"><i style="background:${s.color}"></i>${esc(s.name)}</button>`).join('')}
+    </div>
+    <div class="hint" style="margin-top:8px">Pasa el mouse para ver el índice de cada mes. Los clusters se normalizan por separado.</div>`;
+  bindLine($('#dem-chart'),series,ps,268,100);
+  $$('#dem-legend .lg').forEach(b=>b.onclick=()=>{
+    if(b.dataset.cl!=='true')return;
+    const id=b.dataset.s; if(state.off.has(id))state.off.delete(id); else state.off.add(id);
+    renderOverview();
+  });
+
+  // donut
+  const top20=top20From(ks);
+  const none=Math.max(ks.length-top100,0), band100=Math.max(top100-top20,0), band20=Math.max(top20-top10,0), band10=Math.max(top10-top3,0);
+  const segs=[
+    {label:'Fuera del Top 100',value:none,color:'#DCD6CC'},
+    {label:'21º – 100º',value:band100,color:'#2F6FD0'},
+    {label:'11º – 20º',value:band20,color:'#7757C4'},
+    {label:'4º – 10º',value:band10,color:'#D08C2E'},
+    {label:'Top 3',value:top3,color:'#3FA96A'}
+  ].filter(s=>s.value>0);
+  const pctTop=ks.length?top100/ks.length*100:0;
+  $('#card-donut').innerHTML=`
+    <div class="cardhead"><div><h3>Distribución de posiciones</h3><div class="sub">Última lectura · ${ks.length} keywords</div></div></div>
+    ${donut(segs,`${Math.round(pctTop)}%`,'NO TOP 100')}
+    <div class="hint" style="margin-top:12px;text-align:center">${none} de ${ks.length} keywords todavía no aparecen en el Top 100.</div>`;
+
+  // scatter
+  const pts=ks.filter(k=>k.volume>0);
+  const maxV=Math.max(...pts.map(k=>k.volume),1);
+  const logV=v=>Math.log10(Math.max(v,5));
+  const loL=logV(5),hiL=logV(maxV*1.35);
+  const SW=940,SH=300,mm={l:50,r:18,t:16,b:34};
+  const xMax=Math.max(40,Math.ceil(Math.max(...pts.map(k=>k.sd||0),1)/10)*10);
+  const SX=v=>mm.l+Math.min(v,xMax)/xMax*(SW-mm.l-mm.r), SY=v=>mm.t+(1-(logV(v)-loL)/(hiL-loL))*(SH-mm.t-mm.b);
+  let gridS='';
+  for(let i=0;i<=4;i++){const y=mm.t+i*(SH-mm.t-mm.b)/4;gridS+=`<line x1="${mm.l}" x2="${SW-mm.r}" y1="${y}" y2="${y}" stroke="#1e1e21"/>`;}
+  const xStep=xMax%4===0?xMax/4:(xMax%5===0?xMax/5:10);
+  for(let s=xStep;s<xMax;s+=xStep){gridS+=`<line x1="${SX(s)}" x2="${SX(s)}" y1="${mm.t}" y2="${SH-mm.b}" stroke="#EAE5DD"/>`;}
+  const ticksV=[10,30,100,300,1000,3000,10000];
+  ticksV.filter(v=>v>=Math.pow(10,loL)&&v<=Math.pow(10,hiL)).forEach(v=>{
+    gridS+=`<text x="${mm.l-8}" y="${SY(v)+3}" text-anchor="end" fill="#9B9389" font-size="10" font-family="JetBrains Mono,monospace">${v>=1000?fmt(v):v}</text>`;
+  });
+  for(let s=0;s<=xMax;s+=xStep){gridS+=`<text x="${SX(s)}" y="${SH-mm.b+18}" text-anchor="middle" fill="#9B9389" font-size="10" font-family="JetBrains Mono,monospace">${Math.round(s)}</text>`;}
+  const dots=pts.map((k,i)=>{
+    const r=3.4+(PRIO[k.priority]||1)*1.1;
+    const ang=i*2.399, rad=2.2+(i%5)*1.7, jx=Math.cos(ang)*rad, jy=Math.sin(ang)*rad;
+    return `<circle class="dotp" data-k="${esc(k.keyword)}" cx="${SX(k.sd)+jx}" cy="${SY(k.volume)+jy}" r="${r}" fill="${ccol(k.cluster)}" fill-opacity=".72" stroke="#FFFFFF" stroke-width="1"/>`;
+  }).join('');
+  const qwx=Math.min(35,xMax);
+  const qw=`<rect x="${mm.l}" y="${mm.t}" width="${SX(qwx)-mm.l}" height="${SH-mm.b-mm.t}" fill="#3FA96A" opacity=".04"/>
+    <text x="${mm.l+8}" y="${mm.t+12}" fill="#2C7A4E" font-size="9.5" letter-spacing="1.4" font-family="JetBrains Mono,monospace" opacity=".65">QUICK WINS · SD ≤ ${qwx}</text>`;
+  $('#card-scatter').innerHTML=`
+    <div class="cardhead"><div><h3>Radar de oportunidad</h3><div class="sub">Volumen de búsqueda × dificultad SEO · burbuja = prioridad</div></div><div class="tools"><span class="tag">${pts.length} keywords con volumen</span></div></div>
+    <div class="scatter"><svg viewBox="0 0 ${SW} ${SH}" style="width:100%;height:auto;display:block;overflow:visible">
+      ${qw}${gridS}${dots}
+      <text x="${SW/2}" y="${SH-4}" text-anchor="middle" fill="#9B9389" font-size="10" letter-spacing="1.5" font-family="JetBrains Mono,monospace">DIFICULTAD (SD)</text>
+      <text transform="translate(12 ${SH/2}) rotate(-90)" text-anchor="middle" fill="#9B9389" font-size="10" letter-spacing="1.5" font-family="JetBrains Mono,monospace">VOLUMEN/MES (LOG)</text>
+    </svg></div>`;
+  $$('#card-scatter .dotp').forEach(c=>{
+    const k=D.keywords.find(x=>x.keyword===c.dataset.k); if(!k)return;
+    c.addEventListener('mousemove',e=>showTip(e,`<div style="font-weight:600;margin-bottom:5px">${esc(k.keyword)}</div>
+      <div class="mono" style="font-size:10.5px;color:var(--muted);line-height:1.85">${fmt(k.volume)} búsquedas/mes<br>SD ${k.sd} · CPC US$ ${fmt1(k.cpc)}<br>${esc(k.cluster)} · ${esc(k.priority)}</div>`));
+    c.addEventListener('mouseleave',hideTip);
+    c.addEventListener('click',()=>openKw(k));
+  });
+
+  // difficulty by cluster
+  const cl=D.clusters.filter(c=>ks.some(k=>k.cluster===c.name)).map(c=>{
+    const sub=ks.filter(k=>k.cluster===c.name);
+    return {label:c.name,value:Math.round(sum(sub,k=>k.sd)/sub.length),display:''+Math.round(sum(sub,k=>k.sd)/sub.length),dot:ccol(c.name),color:ccol(c.name)};
+  }).sort((a,b)=>b.value-a.value);
+  $('#card-diff').innerHTML=`
+    <div class="cardhead"><div><h3>Dificultad media por cluster</h3><div class="sub">0–100 · cuanto menor, más rápido de posicionar</div></div></div>
+    ${cl.length?hbars(cl,{max:100}):emptyBox('Sem clusters no filtro')}
+    <div class="hint" style="margin-top:14px">Barra = promedio simple del SD de las keywords del cluster.</div>`;
+
+  // opportunities
+  const opp=[...ks].filter(k=>k.volume>0).sort((a,b)=>(b.volume*(1-b.sd/100))-(a.volume*(1-a.sd/100))).slice(0,8);
+  $('#card-opps').innerHTML=`
+    <div class="cardhead" style="padding:14px 16px 0"><div><h3>Oportunidades priorizadas</h3><div class="sub">Score = volume × (1 − SD/100)</div></div><div class="tools"><span class="tag">top 8</span></div></div>
+    <div class="tblwrap" style="margin-top:8px"><table><thead><tr>
+      <th>Keyword</th><th>Cluster</th><th class="num">Volumen</th><th class="num">SD</th><th class="num">CPC</th><th class="num">Score</th><th>Intención</th>
+    </tr></thead><tbody>${opp.map(k=>`<tr data-k="${esc(k.keyword)}">
+      <td><div class="kw"><i style="background:${ccol(k.cluster)}"></i><span>${esc(k.keyword)}</span></div></td>
+      <td style="color:var(--muted)">${esc(k.cluster)}</td>
+      <td class="num">${fmt(k.volume)}</td>
+      <td class="num" style="color:${k.sd<40?'var(--green)':k.sd<60?'var(--amber)':'var(--red-600)'}">${k.sd}</td>
+      <td class="num">US$ ${fmt1(k.cpc)}</td>
+      <td class="num" style="color:var(--txt)">${fmt(Math.round(k.volume*(1-k.sd/100)))}</td>
+      <td style="color:var(--dim);font-size:10.5px">${esc(itr(k.intent))}</td>
+    </tr>`).join('')||`<tr><td colspan="7">${emptyBox('Ninguna keyword con volumen en el filtro')}</td></tr>`}</tbody></table></div>`;
+  $$('#card-opps tbody tr[data-k]').forEach(tr=>tr.onclick=()=>{const k=D.keywords.find(x=>x.keyword===tr.dataset.k);if(k)openKw(k);});
+}
+const top20From=ks=>ks.filter(k=>k.position&&k.position<=20).length;
+const top10From=ks=>ks.filter(k=>k.position&&k.position<=10).length;
+
+/* ---------- keywords table ---------- */
+function sortRows(rows){
+  const {k,d}=state.sort;
+  return [...rows].sort((a,b)=>{
+    let av=a[k],bv=b[k];
+    if(k==='priority'){av=PRIO[av]||0;bv=PRIO[bv]||0;}
+    if(k==='position'){av=av||999;bv=bv||999;}
+    if(k==='status'){av=av==='ok'?0:av==='unstable'?1:2;bv=bv==='ok'?0:bv==='unstable'?1:2;}
+    if(typeof av==='string')return av.localeCompare(bv,'es-US')*d;
+    return ((av??-1)-(bv??-1))*d;
+  });
+}
+function renderKeywords(){
+  const rows=sortRows(filtered());
+  const pages=Math.max(1,Math.ceil(rows.length/state.per));
+  state.page=Math.min(state.page,pages);
+  const slice=rows.slice((state.page-1)*state.per,state.page*state.per);
+  $('#kwsub').textContent=`${rows.length} keywords en el filtro · ${state.cluster||'todos los clusters'} · ${state.prio||'toda prioridad'}`;
+  $('#kwbody').innerHTML=slice.map(k=>`<tr data-k="${esc(k.keyword)}">
+    <td><div class="kw"><i style="background:${ccol(k.cluster)}"></i><span>${esc(k.keyword)}</span></div></td>
+    <td style="color:var(--muted)">${esc(k.cluster)}</td>
+    <td><span class="prio ${esc(k.priority)}">${esc(k.priority)}</span></td>
+    <td class="num">${fmt(k.volume)}</td>
+    <td class="num">US$ ${fmt1(k.cpc)}</td>
+    <td><div class="sdbar"><span class="t"><span class="f" style="width:${k.sd}%;background:${k.sd<40?'var(--green)':k.sd<60?'var(--amber)':'var(--red)'}"></span></span><span class="mono" style="font-size:10px;color:var(--muted)">${k.sd}</span></div></td>
+    <td style="color:var(--dim);font-size:10.5px">${esc(itr(k.intent))}</td>
+    <td class="pos ${k.position?'':'none'}">${k.position?'#'+k.position:'—'}</td>
+    <td style="color:${k.status==='ok'?'var(--green)':'var(--dim)'};font-size:10px">${k.status==='ok'?'leída':k.status==='unstable'?'inestable':'en espera'}</td>
+  </tr>`).join('')||`<tr><td colspan="9">${emptyBox('Ninguna keyword encontrada','Ajusta los filtros o limpia la búsqueda.')}</td></tr>`;
+  $$('#kwbody tr[data-k]').forEach(tr=>tr.onclick=()=>{const k=D.keywords.find(x=>x.keyword===tr.dataset.k);if(k)openKw(k);});
+  $('#pginfo').textContent=rows.length?`${(state.page-1)*state.per+1}–${Math.min(state.page*state.per,rows.length)} de ${rows.length}`:'0 resultados';
+  $('#pgnum').textContent=`${state.page} / ${pages}`;
+  $('#pgprev').disabled=state.page<=1; $('#pgnext').disabled=state.page>=pages;
+  $$('#kwtbl thead th.s').forEach(th=>{
+    th.classList.toggle('sorted',th.dataset.k===state.sort.k);
+    const ar=th.querySelector('.ar'); if(ar)ar.textContent=state.sort.d===1?'↑':'↓';
+  });
+  $('#navkw').textContent=rows.length;
+}
+
+/* ---------- competition ---------- */
+function renderCompetition(){
+  const my=D.meta.domain;
+  const list=Object.keys(D.domains).map(d=>({d,...D.domains[d]}));
+  const myStat=list.find(x=>x.d===my)||{d:my,organic:0,traffic:0};
+  const kwItems=list.map(x=>({label:x.d,value:x.organic||0,display:fmt(x.organic||0),dot:x.d===my?'var(--red-600)':undefined,color:x.d===my?'#E31919':'#2F6FD0'}));
+  $('#card-comp-kw').innerHTML=`<div class="cardhead"><div><h3>Keywords orgánicas</h3><div class="sub">Estimación ${esc(D.meta.tool||'')}</div></div></div>${hbars(kwItems,{color:'#D7D1C6'})}
+    <div class="hint" style="margin-top:12px">${esc(D.meta.client)} tiene <b style="color:var(--red-600)">${fmt(myStat.organic||0)}</b> keywords orgánicas indexadas en la lectura del ${dshort(D.meta.baseline_date)}.</div>`;
+  const trItems=list.map(x=>({label:x.d,value:x.traffic||0,display:fmt(x.traffic||0),dot:x.d===my?'var(--red-600)':undefined,color:x.d===my?'#E31919':'#7757C4'}));
+  $('#card-comp-tr').innerHTML=`<div class="cardhead"><div><h3>Tráfico orgánico estimado</h3><div class="sub">visitas/mes</div></div></div>${hbars(trItems,{color:'#D7D1C6'})}
+    <div class="hint" style="margin-top:12px">Los dominios más grandes operan portales globales o nacionales; compara el orden de magnitud, no el mercado local.</div>`;
+  const nSerps=Object.keys(D.serps).length;
+  $('#card-comp-tbl').innerHTML=`<div class="cardhead" style="padding:14px 16px 0"><div><h3>Benchmark de dominios</h3><div class="sub">Autoridad, backlinks y presencia en las SERPs analizadas</div></div></div>
+    <div class="tblwrap" style="margin-top:6px"><table><thead><tr>
+      <th>Dominio</th><th class="num">DA</th><th class="num">Keywords</th><th class="num">Tráfico</th><th class="num">Dominios ref.</th><th class="num">Backlinks</th><th class="num">SERPs (${nSerps})</th>
+    </tr></thead><tbody>${list.map(x=>{
+      const hits=D.serpFreq.find(f=>f[0]===x.d)?.[1]||0;
+      return `<tr><td style="font-family:var(--m);font-size:11px;color:${x.d===my?'var(--red-600)':'var(--txt)'}">${esc(x.d)}${x.d===my?' <span class="tag" style="margin-left:4px">cliente</span>':''}</td>
+      <td class="num">${x.domainAuthority??'—'}</td><td class="num">${fmt(x.organic)}</td><td class="num">${fmt(x.traffic)}</td>
+      <td class="num">${fmt(x.refDomains)}</td><td class="num">${fmt(x.backlinks)}</td><td class="num">${hits}</td></tr>`;
+    }).join('')}</tbody></table></div>`;
+  const freq=D.serpFreq.filter(f=>!['google.com','youtube.com'].includes(f[0])).slice(0,10).map(f=>({label:f[0],value:f[1],display:f[1]+'×',color:'#2F6FD0'}));
+  $('#card-serpfreq').innerHTML=`<div class="cardhead"><div><h3>Dominios más frecuentes</h3><div class="sub">Apariciones en el Top 8 de las ${nSerps} SERPs analizadas</div></div></div>${freq.length?hbars(freq,{max:Math.max(...freq.map(f=>f.value))}):emptyBox('Sem SERPs coletadas')}`;
+  const notes=(D.competitive_notes||[]).map(n=>`<p><b style="color:var(--txt)">${esc(n.b)}</b> ${n.t}</p>`).join('')||emptyBox('Sem notas cadastradas');
+  $('#card-comp-notes').innerHTML=`<div class="cardhead"><div><h3>Lectura competitiva</h3><div class="sub">lo que dicen los números</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:11.5px;color:var(--muted);line-height:1.7">${notes}</div>`;
+}
+
+/* ---------- SERP ---------- */
+function renderSerp(){
+  const kws=Object.keys(D.serps);
+  $('#serptabs').innerHTML=kws.map(k=>`<button class="tab ${k===state.serpKw?'on':''}" data-k="${esc(k)}">${esc(k)}<b>${D.serps[k].length}</b></button>`).join('');
+  $$('#serptabs .tab').forEach(b=>b.onclick=()=>{state.serpKw=b.dataset.k;renderSerp();});
+  const rows=D.serps[state.serpKw]||[];
+  if(!kws.length){$('#card-serp-tbl').innerHTML=`<div class="cardhead" style="padding:14px 16px 0"><div><h3>SERPs</h3><div class="sub">ninguna SERP recopilada</div></div></div><div style="padding:14px 16px 18px">${emptyBox('Selecione um cliente para ver as SERPs analisadas')}</div>`;return;}
+  const maxC=Math.max(...rows.map(r=>r.clicks||0),1);
+  $('#card-serp-tbl').innerHTML=`
+    <div class="cardhead" style="padding:14px 16px 0"><div><h3>${esc(state.serpKw)}</h3><div class="sub">Top 8 orgánicos · ${esc(D.meta.motor||D.meta.location+' · '+D.meta.language)} · ${esc(D.meta.device)} · recopilada ${dshort(D.meta.baseline_date)}</div></div><span class="tag">${rows.length} resultados</span></div>
+    <div class="tblwrap" style="margin-top:8px"><table><thead><tr><th class="num" style="width:40px">#</th><th>Dominio</th><th>Título</th><th class="num">DA</th><th class="num">Clics/mes</th><th style="width:140px">Peso</th></tr></thead>
+    <tbody>${rows.map(r=>`<tr style="cursor:default">
+      <td class="num" style="color:${r.pos<=3?'var(--green)':'var(--muted)'}">${r.pos}</td>
+      <td style="font-family:var(--m);font-size:10.5px">${esc(r.domain)}</td>
+      <td style="max-width:420px;overflow:hidden;text-overflow:ellipsis;color:var(--muted)">${esc(r.title||r.url||'—')}</td>
+      <td class="num">${r.da??'—'}</td><td class="num">${fmt(r.clicks)}</td>
+      <td><div class="bar" style="grid-template-columns:1fr"><span class="track"><span class="fill" style="width:${Math.max((r.clicks||0)/maxC*100,2)}%;background:${r.domain===D.meta.domain?'var(--red)':'#2F6FD0'}"></span></span></div></td>
+    </tr>`).join('')}</tbody></table></div>
+    <div class="hint" style="padding:10px 16px 14px">Los clics son la estimación de la fuente para el resultado, no el tráfico real del competidor.</div>`;
+}
+
+/* ---------- demand ---------- */
+function renderDemand(){
+  const ks=filtered(),ps=periods(),dem=idxSeries(ks,ps);
+  const series=[{id:'d',name:'Total del portafolio',color:'#E31919',data:dem,area:true,w:2.2}];
+  $('#card-didx').innerHTML=`<div class="cardhead"><div><h3>Índice de demanda</h3><div class="sub">Base 100 = promedio de cada keyword en el período · ${ks.length} keywords</div></div></div>
+    <div id="didx-chart">${lineChart(series,ps,{h:230,base:100})}</div>
+    <div class="hint" style="margin-top:8px">Los meses con menos keywords reportando aparecen en el tooltip con el n del cálculo.</div>`;
+  bindLine($('#didx-chart'),series,ps,230,100);
+
+  if(!ks.length){
+    $('#card-didx').innerHTML=`<div class="cardhead"><div><h3>Índice de demanda</h3><div class="sub">sin keywords en el período</div></div></div><div style="padding:4px 16px 16px">${emptyBox('Selecione um cliente para ver a demanda')}</div>`;
+    $('#card-heat').innerHTML=`<div class="cardhead" style="padding:14px 16px 0"><div><h3>Volumen mensual por keyword</h3><div class="sub">—</div></div></div><div style="padding:14px 16px 18px">${emptyBox('Sin keywords en el período')}</div>`;
+    return;
+  }
+  const top=[...ks].filter(k=>k.volume>0).sort((a,b)=>b.volume-a.volume).slice(0,14);
+  const max=Math.max(...top.flatMap(k=>ps.map(p=>k.monthly.find(x=>x.p===p)?.v||0)),1);
+  const cell=(k,p)=>{
+    const x=k.monthly.find(y=>y.p===p);
+    if(!x)return `<td class="c nul">—</td>`;
+    const a=Math.pow(x.v/max,.55);
+    return `<td class="c" style="background:rgba(227,25,25,${(a*.9+.10).toFixed(2)});color:${a>.55?'#fff':'#7A2A22'}" title="${esc(k.keyword)} · ${mlab(p)}: ${fmt(x.v)}">${state.heat==='heat'?fmt(x.v):fmt(x.v)}</td>`;
+  };
+  $('#card-heat').innerHTML=`
+    <div class="cardhead" style="padding:14px 16px 0"><div><h3>Volumen mensual por keyword</h3><div class="sub">Top ${top.length} por volumen · búsquedas/mes</div></div><span class="tag">${state.heat==='heat'?'mapa de calor':'tabla'}</span></div>
+    <div class="hm" style="padding:12px 14px 14px"><table>
+      <thead><tr><th class="k">Keyword</th>${ps.map(p=>`<th>${mlab(p)}</th>`).join('')}</tr></thead>
+      <tbody>${top.map(k=>`<tr><td class="k" title="${esc(k.keyword)}">${esc(k.keyword)}</td>${ps.map(p=>cell(k,p)).join('')}</tr>`).join('')}</tbody>
+    </table></div>`;
+}
+
+/* ---------- drawer ---------- */
+function openKw(k){
+  const ps=D.meta.periods.slice(-12);
+  const data=ps.map(p=>{const x=k.monthly.find(y=>y.p===p);return {p,v:x?x.v:null};});
+  const serp=Object.entries(D.serps).find(([kw])=>kw===k.keyword||kw.includes(k.keyword)||k.keyword.includes(kw));
+  $('#drawer').innerHTML=`
+    <div class="dhead"><div><h2>${esc(k.keyword)}</h2>
+      <div class="meta"><span class="prio ${esc(k.priority)}">${esc(k.priority)}</span>
+      <span class="chip" style="padding:3px 8px"><i style="background:${ccol(k.cluster)}"></i>${esc(k.cluster)}</span>
+      <span class="chip mono" style="padding:3px 8px">${k.status==='ok'?'leída':k.status==='unstable'?'inestable':'esperando lectura'}</span></div></div>
+      <button class="x" id="dclose">✕</button></div>
+    <div class="dbody">
+      <div class="dstats">
+        <div class="dstat"><div class="l">Volumen</div><div class="v">${fmt(k.volume)}</div></div>
+        <div class="dstat"><div class="l">Dificultad</div><div class="v" style="color:${k.sd<40?'var(--green)':k.sd<60?'var(--amber)':'var(--red-600)'}">${k.sd}</div></div>
+        <div class="dstat"><div class="l">CPC</div><div class="v">US$ ${fmt1(k.cpc)}</div></div>
+        <div class="dstat"><div class="l">Posición</div><div class="v">${k.position?'#'+k.position:'—'}</div></div>
+      </div>
+      <div class="dsec"><h4>Intención y competencia</h4>
+        <p>Intención <b style="color:var(--txt)">${esc(itr(k.intent))==='—'?'no clasificada':esc(itr(k.intent))}</b> · competencia de anuncios <b style="color:var(--txt)">${k.competition==null?'—':fmt1(k.competition*100)+'%'}</b>. Score de oportunidad <b style="color:var(--txt)">${fmt(Math.round(k.volume*(1-k.sd/100)))}</b>.</p></div>
+      <div class="dsec"><h4>Demanda 12 meses</h4><div id="dk-chart">${lineChart([{id:'k',name:k.keyword,color:'#E31919',data,area:true,w:2}],ps,{h:200,w:400})}</div></div>
+      ${serp?`<div class="dsec"><h4>SERP analizada <span class="tag">${serp[1].length} resultados</span></h4>
+        ${serp[1].slice(0,5).map(r=>`<div class="serprow"><span class="p">${r.pos}</span><span class="d">${esc(r.domain)}</span><span class="da">DA ${r.da??'—'}</span></div>`).join('')}
+        <p style="margin-top:8px">${serp[1].some(r=>r.domain&&r.domain===D.meta.domain)?`${esc(D.meta.client)} aparece en esta SERP.`:`Ningún resultado de ${esc(D.meta.client)} en la primera página.`}</p></div>`:`<div class="dnote">SERP ainda não coletada para esta keyword. A coleta cobre as ${Object.keys(D.serps).length} consultas de maior volume.</div>`}
+      <div class="dnote">${k.checked_date?`Última lectura el ${k.checked_date.split('-').reverse().join('/')}.`:`Esperando la lectura de ${esc(D.meta.tool||'Data for SEO')} (${dshort(D.meta.next_update)}).`} El historial de posiciones empieza a dibujarse desde la segunda lectura.</div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button class="ghost" id="dkfilter" style="flex:1">Filtrar por ${esc(k.cluster)}</button>
+        <button class="ghost" id="dkclose" style="flex:1">Cerrar</button>
+      </div>
+    </div>`;
+  $('#drawer').classList.add('on');$('#overlay').classList.add('on');
+  bindLine($('#dk-chart'),[{id:'k',name:k.keyword,color:'#E31919',data,area:true,w:2}],ps,200,null,'',400);
+  $('#dclose').onclick=closeDrawer;$('#dkclose').onclick=closeDrawer;
+  $('#dkfilter').onclick=()=>{state.cluster=k.cluster;state.q='';$('#fcluster').value=k.cluster;$('#fq').value='';closeDrawer();renderCurrent();};
+}
+function closeDrawer(){$('#drawer').classList.remove('on');$('#overlay').classList.remove('on');hideTip();}
+
+/* ---------- routing ---------- */
+const TITLES={overview:'Visión general',keywords:'Keywords',competition:'Competencia',serp:'SERPs',demand:'Demanda',method:'Metodología'};
+function renderCurrent(){
+  if(state.view==='overview')renderOverview();
+  else if(state.view==='keywords')renderKeywords();
+  else if(state.view==='competition')renderCompetition();
+  else if(state.view==='serp')renderSerp();
+  else if(state.view==='demand')renderDemand();
+}
+function go(v){
+  state.view=v;
+  $$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.view===v));
+  $$('.view').forEach(s=>s.classList.toggle('on',s.id==='view-'+v));
+  $('#crumb').textContent=TITLES[v]||v;
+  renderCurrent();
+  $('#content').scrollTop=0;
+}
+
+/* ---------- events ---------- */
+$('#fcluster').innerHTML='<option value="">Todos los clusters</option>'+D.clusters.map(c=>`<option>${esc(c.name)}</option>`).join('');
+$('#fcluster').onchange=e=>{state.cluster=e.target.value;state.page=1;renderCurrent();};
+$('#fprio').onchange=e=>{state.prio=e.target.value;state.page=1;renderCurrent();};
+$('#fmonths').onchange=e=>{state.months=+e.target.value;renderCurrent();};
+$('#fper').onchange=e=>{state.per=+e.target.value;state.page=1;renderCurrent();};
+$('#fq').oninput=e=>{state.q=e.target.value;state.page=1;renderCurrent();};
+$('#freset').onclick=()=>{state.cluster='';state.prio='';state.q='';state.months=12;state.page=1;$('#fcluster').value='';$('#fprio').value='';$('#fmonths').value='12';$('#fq').value='';renderCurrent();};
+$('#fexport').onclick=()=>{
+  const rows=filtered();
+  const head=['keyword','cluster','prioridad','volumen','cpc','sd','intencion','posicion','status'];
+  const csv=[head.join(';')].concat(rows.map(k=>[k.keyword,k.cluster,k.priority,k.volume,k.cpc,k.sd,k.intent||'',k.position||'',k.status].map(v=>`"${String(v).replace(/"/g,'""')}"`).join(';'))).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));
+  a.download=`${D.meta.slug||'keywords'}-keywords-filtrado.csv`;a.click();URL.revokeObjectURL(a.href);
+};
+$$('#kwtbl thead th.s').forEach(th=>th.onclick=()=>{
+  const k=th.dataset.k;
+  if(state.sort.k===k)state.sort.d*=-1;else state.sort={k,d:k==='keyword'||k==='cluster'?1:-1};
+  renderKeywords();
+});
+$('#pgprev').onclick=()=>{state.page--;renderKeywords();};
+$('#pgnext').onclick=()=>{state.page++;renderKeywords();};
+$$('#nav button').forEach(b=>b.onclick=()=>{closeDrawer();go(b.dataset.view);});
+$('#overlay').onclick=closeDrawer;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+$$('[data-heat]').forEach(b=>b.onclick=()=>{state.heat=b.dataset.heat;$$('[data-heat]').forEach(x=>x.classList.toggle('on',x===b));renderDemand();});
+
+/* ---------- boot ---------- */
+function dshort(iso){
+  if(!iso)return '—';
+  const [y,m,d]=iso.split('-');
+  return `${d}/${m}/${y.slice(2)}`;
+}
+function syncMeta(){
+  document.title=`${D.meta.client} · Traffic Analytics`;
+  $('#cbrumb').textContent=D.meta.client;
+  $('#cav').textContent=D.meta.initials||(D.meta.client||'??').slice(0,2).toUpperCase();
+  $('#csname').textContent=D.meta.client;
+  const ICK='<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8.5 6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const INV='<svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const CL=(D.meta.clients||[{name:D.meta.client,slug:D.meta.slug||'',url:''}]);
+  $('#cpop').innerHTML=`<div class="csh">Clientes · Traffic Analytics</div>`+CL.map(c=>{
+    const cur=c.slug===(D.meta.slug||'');
+    return `<div class="csopt${cur?' on':''}" role="option" aria-selected="${cur}" tabindex="-1" data-slug="${esc(c.slug||'')}" data-url="${esc(c.url||'')}">
+      <span class="oi">${esc((c.name||'??').slice(0,2).toUpperCase())}</span>
+      <span class="oname">${esc(c.name)}${cur?' <span style="color:var(--dim);font-size:10px">· este</span>':''}</span>
+      <span class="oic ${cur?'ck':'nv'}">${cur?ICK:INV}</span>
+    </div>`;
+  }).join('');
+  $('#csel').classList.toggle('poor',CL.length<2);
+  $('#csel').toggleAttribute('disabled',CL.length<2);
+  $$('#cpop .csopt').forEach(o=>o.onclick=()=>pickClient(o.dataset.slug,o.dataset.url));
+  $('#ovsub').textContent=`Monitoreo de rankings orgánicos · ${D.meta.motor||D.meta.location} · ${D.meta.device}`;
+  $('#ovbase').textContent=`base ${dshort(D.meta.baseline_date)}`;
+  $('#methodchip').textContent=`v${D.meta.version||'1.0'} · ${dshort(D.meta.baseline_date)}`;
+  const bm=dshort(D.meta.baseline_date).split('/');const bmLabel=bm[1]&&bm[0]?`${['','ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][+bm[1]]}/${bm[2]}`:dshort(D.meta.baseline_date);
+  $('#compchip').textContent=`${D.meta.tool||''} · ${bmLabel}`;
+  $('#serpchip').textContent=`${D.meta.location} · ${D.meta.language} · ${D.meta.device}`;
+  $('#covtxt').textContent=`${D.kpis.checked}/${D.kpis.tracked} lidas`;
+  $('#olcount').textContent=D.kpis.tracked;
+  $('#navserp').textContent=String(Object.keys(D.serps).length).padStart(2,'0');
+  $('#navcomp').textContent=String(Object.keys(D.domains).length).padStart(2,'0');
+  $('#navkw').textContent=D.kpis.tracked;
+  $('#lastread').textContent=dshort(D.meta.last_read);
+  $('#nextupd').textContent=dshort(D.meta.next_update);
+}
+function renderMethod(){
+  $('#method-cards').innerHTML=((D.method_cards||[]).map(c=>`<div class="card"><h3>${esc(c.h3)}</h3>${c.html}</div>`).join(''))||`<div class="card"><h3>Fuente de los datos</h3><p>No documentado en este archivo.</p></div>`;
+}
+
+/* ---------- atualização direta via MCP ---------- */
+function toast(msg,err){
+  const t=$('#toast');
+  t.textContent=msg;
+  t.classList.toggle('err',!!err);
+  t.classList.add('on');
+  clearTimeout(toast._t);
+  toast._t=setTimeout(()=>t.classList.remove('on'),4600);
+}
+async function refreshMCP(){
+  const b=$('#frefresh');
+  const local=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+  if(location.protocol==='file:'||!local){
+    toast('Lectura en vivo disponible en el panel local: python3 server.py → localhost:8787');
+    return;
+  }
+  if(b.disabled)return;
+  b.disabled=true;b.classList.add('spin');b.querySelector('span').textContent='Lendo…';
+  try{
+    const res=await fetch('/api/refresh',{method:'POST'});
+    const j=await res.json();
+    if(!j.ok)throw new Error(j.error||'falla en la lectura');
+    for(const k of Object.keys(D))delete D[k];
+    Object.assign(D,j.data);
+    syncMeta();renderCurrent();
+    toast(`Lectura actualizada · ${D.kpis.checked}/${D.kpis.tracked} keywords · ${dshort(D.meta.last_read)}`);
+  }catch(e){
+    toast('No fue posible actualizar: '+e.message,true);
+  }finally{
+    b.disabled=false;b.classList.remove('spin');b.querySelector('span').textContent='Atualizar';
+  }
+}
+$('#frefresh').onclick=refreshMCP;
+function openCsel(){
+  $('#cselwrap').classList.add('open');
+  $('#csel').setAttribute('aria-expanded','true');
+  const cur=$('#cpop .csopt.on')||$('#cpop .csopt');
+  if(cur)cur.focus();
+}
+function closeCsel(){
+  $('#cselwrap').classList.remove('open');
+  $('#csel').setAttribute('aria-expanded','false');
+  $$('#cpop .csopt.f').forEach(o=>o.classList.remove('f'));
+}
+function pickClient(slug,url){
+  if(!slug)return closeCsel();
+  try{localStorage.setItem('ta-lastclient',slug)}catch(_){}
+  const href=location.href.split('#')[0].replace(/\/$/,'');
+  if(url&&href!==url.replace(/\/$/,''))location.href=url;
+  else closeCsel();
+}
+$('#csel').onclick=e=>{
+  e.stopPropagation();
+  $('#cselwrap').classList.contains('open')?closeCsel():openCsel();
+};
+$('#csel').onkeydown=null;
+$('#cselwrap').addEventListener('keydown',e=>{
+  const open=$('#cselwrap').classList.contains('open');
+  const inPop=e.target.classList&&e.target.classList.contains('csopt');
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+    e.preventDefault();
+    if(!open){openCsel();return;}
+    const opts=$$('#cpop .csopt');
+    const i=opts.findIndex(o=>o.classList.contains('f'));
+    const n=i<0?(e.key==='ArrowDown'?0:opts.length-1):Math.max(0,Math.min(opts.length-1,i+(e.key==='ArrowDown'?1:-1)));
+    opts.forEach(o=>o.classList.remove('f'));
+    opts[n].classList.add('f');opts[n].focus();
+  }else if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    if(inPop)return pickClient(e.target.dataset.slug,e.target.dataset.url);
+    if(open){const f=$('#cpop .csopt.f')||$('#cpop .csopt.on');if(f)pickClient(f.dataset.slug,f.dataset.url);}
+    else openCsel();
+  }else if(e.key==='Escape'&&open){
+    e.stopPropagation();closeCsel();$('#csel').focus();
+  }
+});
+document.addEventListener('click',e=>{
+  if($('#cselwrap').classList.contains('open')&&!e.target.closest('#cselwrap'))closeCsel();
+});
+
+
+syncMeta();
+renderMethod();
+go('overview');
 </script>
 </body>
 </html>
