@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Traffic Analytics · Peretto&amp;Co</title>
-<meta name="description" content="Plataforma de inteligência de tráfego e SEO da Peretto&Co. Painéis por cliente com posicionamento, keywords, SERPs e concorrência.">
+<meta name="description" content="Plataforma de inteligência de busca da Peretto&Co para SEO e mídia paga: histórico de demanda, sazonalidade, CPC, posições, SERPs e concorrência por cliente.">
 <meta name="theme-color" content="#0B0908">
 <link rel="icon" href="assets/logo-peretto-red.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,6 +183,31 @@
   a.card:hover .go{transform:translateX(4px) scale(1.06); box-shadow:0 8px 26px -2px rgba(227,25,25,.9)}
   .empty{display:none; text-align:center; color:var(--muted); padding:48px 0; font-family:var(--m); font-size:13px}
 
+
+  /* ---------- mídia ---------- */
+  .media{margin-top:76px}
+  .mgrid{display:grid; grid-template-columns:1.55fr 1fr; gap:18px}
+  @media (max-width:980px){.mgrid{grid-template-columns:1fr}}
+  .heatcard{border:1px solid var(--line); border-radius:22px; padding:22px; background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015)); backdrop-filter:blur(14px); min-width:0}
+  .hh{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:16px}
+  .hh b{display:block; font-size:17px; font-weight:800; letter-spacing:-.015em}
+  .hh span:not(.tag){display:block; font-size:12px; color:var(--muted); margin-top:2px}
+  .heatwrap{overflow-x:auto}
+  table.heat{border-collapse:separate; border-spacing:3px; width:100%; min-width:0; font-family:var(--m); font-size:10px}
+  .heat th{font-weight:500; color:var(--dim); text-transform:uppercase; letter-spacing:.06em; padding:0 0 4px; text-align:center}
+  .heat th:first-child{text-align:left}
+  .heat td.k{color:var(--txt); font-family:var(--f); font-size:11.5px; max-width:150px; overflow:hidden; text-overflow:ellipsis; font-weight:600; padding-right:10px; white-space:nowrap}
+  .heat td.c{height:30px; text-align:center; border-radius:6px; color:rgba(255,255,255,.92); transition:transform .15s; cursor:default; min-width:30px; padding:0 2px}
+  .heat td.c:hover{transform:scale(1.18); position:relative; z-index:2; box-shadow:0 8px 24px -6px rgba(227,25,25,.7)}
+  .heat td.m{color:var(--muted); padding-left:6px; white-space:nowrap; text-align:left}
+  .heat td.m b{color:var(--txt); font-weight:600}
+  .hint{margin-top:14px; font-size:11.5px; color:var(--dim)}
+  .uses{display:grid; gap:12px; grid-auto-rows:1fr}
+  .use{border:1px solid var(--line); border-radius:16px; padding:16px 18px 16px 62px; background:var(--panel); position:relative}
+  .use i{position:absolute; left:18px; top:16px; font-style:normal; font-family:var(--m); font-size:11px; color:var(--red-hi); letter-spacing:.1em}
+  .use h3{font-size:15px; font-weight:800; letter-spacing:-.01em}
+  .use p{font-size:12.5px; color:var(--muted); margin-top:3px}
+
   /* ---------- como funciona ---------- */
   .how{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:76px}
   @media (max-width:820px){.how{grid-template-columns:1fr}}
@@ -233,11 +258,12 @@
   </nav>
 
   <section class="hero">
-    <div class="eyebrow">Peretto&amp;Co · Plataforma de SEO</div>
+    <div class="eyebrow">Peretto&amp;Co · Inteligência de busca</div>
     <h1>Traffic <span class="grad">Analytics</span></h1>
-    <p class="lead">Inteligência de tráfego orgânico em um só lugar. <b>Posições, keywords, SERPs e concorrência</b> de cada cliente, atualizados e prontos para decidir.</p>
+    <p class="lead">A mesma fonte para <b>SEO e mídia paga</b>. Histórico de demanda, sazonalidade, CPC, posições e concorrência de cada cliente, prontos para decidir <b>onde e quando investir</b>.</p>
     <div class="cta">
-      <a class="btn pri" href="#clientes">Explorar painéis <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn pri" href="#clientes">Abrir painéis <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn" href="#midia">Ver o mapa de calor</a>
       <a class="btn resume" id="resume" href="#"><span id="rtxt">Continuar</span> <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
@@ -245,7 +271,7 @@
   <section class="stats" aria-label="Resumo da plataforma">
     <div class="stat"><div class="n" data-to="0" id="s-cli">0</div><div class="l">Clientes monitorados</div></div>
     <div class="stat"><div class="n" data-to="0" id="s-kw">0</div><div class="l">Keywords rastreadas</div></div>
-    <div class="stat"><div class="n" data-to="0" id="s-vol">0</div><div class="l">Buscas/mês no radar</div></div>
+    <div class="stat"><div class="n" data-to="0" id="s-vol">0</div><div class="l">Buscas/mês monitoradas</div></div>
     <div class="stat"><div class="n" data-to="0" id="s-bl">0</div><div class="l">Backlinks mapeados</div></div>
   </section>
 
@@ -258,10 +284,29 @@
     <div class="empty" id="empty">Nenhum cliente encontrado.</div>
   </section>
 
+  <section class="media" id="midia">
+    <div class="sec-h">
+      <div><h2>Feito para quem compra mídia</h2><p>Gestor de tráfego, media buyer ou SEO: todo mundo olhando a mesma demanda.</p></div>
+    </div>
+    <div class="mgrid">
+      <div class="heatcard">
+        <div class="hh"><div><b>Mapa de calor de demanda</b><span>Buscas/mês por mês do calendário · Diamond Tint &amp; Wraps · EUA</span></div><span class="tag">exemplo real</span></div>
+        <div class="heatwrap"><table class="heat" id="heat"></table></div>
+        <div class="hint">Mais escuro = mais buscas na própria keyword. Passe o mouse para ver o volume. Fonte: Ubersuggest, último valor disponível de cada mês.</div>
+      </div>
+      <div class="uses">
+        <div class="use"><i>01</i><h3>Quando escalar verba</h3><p>Veja o pico e o vale de busca de cada keyword e planeje orçamento e criativos antes da alta, não depois.</p></div>
+        <div class="use"><i>02</i><h3>Quanto custa o clique</h3><p>CPC e competição de anúncios ao lado da demanda: onde dá para entrar barato e onde o leilão está caro.</p></div>
+        <div class="use"><i>03</i><h3>Qual termo vale a verba</h3><p>Score de oportunidade (volume × facilidade) e intenção da busca para separar o que converte do que só tem volume.</p></div>
+        <div class="use"><i>04</i><h3>Orgânico + pago juntos</h3><p>Keywords que já rankeiam não precisam de lance; as que não rankeiam viram candidatas a campanha.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="how">
-    <div class="step" data-n="1"><div class="no">01 · COLETA</div><h3>Ubersuggest + Search Console</h3><p>Rankings, volume, backlinks e auditoria técnica puxados direto das fontes.</p></div>
-    <div class="step" data-n="2"><div class="no">02 · ANÁLISE</div><h3>SERPs e concorrência</h3><p>Quem ocupa as posições, quanto vale cada keyword e onde está a oportunidade.</p></div>
-    <div class="step" data-n="3"><div class="no">03 · AÇÃO</div><h3>Plano priorizado</h3><p>Do diagnóstico ao check-in: o que atacar primeiro para mover o ponteiro.</p></div>
+    <div class="step" data-n="1"><div class="no">01 · COLETA</div><h3>Ubersuggest + Search Console</h3><p>Volume, histórico de demanda, CPC, rankings, backlinks e auditoria técnica puxados direto das fontes.</p></div>
+    <div class="step" data-n="2"><div class="no">02 · ANÁLISE</div><h3>Demanda, SERPs e concorrência</h3><p>Sazonalidade por keyword, quem ocupa as posições e onde está a oportunidade.</p></div>
+    <div class="step" data-n="3"><div class="no">03 · AÇÃO</div><h3>Verba e plano priorizados</h3><p>Do diagnóstico ao check-in: onde investir em mídia e o que atacar primeiro no orgânico.</p></div>
   </section>
 
   <footer>
@@ -291,6 +336,25 @@ const CLIENTS = [
  {slug:'diamond', name:'Diamond Tint & Wraps', domain:'diamondtintlv.com', ini:'DT', market:'EUA · Las Vegas · es', tool:'Ubersuggest', date:'11/11', tag:'ES',
   m:[['Keywords',50],['Top 10',0],['Backlinks',1508]], vol:4555230, kw:50, bl:1508, d:[0,0,0,0,50]}
 ];
+
+
+/* mapa de calor (dados reais Ubersuggest · Diamond) */
+const HEAT=[{"k":"window tinting near me","v":[368000,368000,550000,550000,450000,450000,450000,368000,368000,450000,368000,368000],"cpc":4.685,"comp":0.53,"sd":15,"vol":450000,"last":"202510"},{"k":"auto tint near me","v":[301000,301000,450000,368000,368000,368000,368000,368000,368000,368000,246000,246000],"cpc":6.24,"comp":0.66,"sd":27,"vol":368000,"last":"202610"},{"k":"car window tint","v":[90500,49500,74000,60500,60500,74000,90500,60500,40500,60500,49500,49500],"cpc":4.3,"comp":0.75,"sd":37,"vol":60500,"last":"202610"},{"k":"ceramic window tint","v":[27100,27100,49500,60500,33100,40500,49500,40500,33100,33100,22200,18100],"cpc":3.8,"comp":0.92,"sd":19,"vol":33100,"last":"202610"},{"k":"paint protection film","v":[74000,40500,40500,49500,49500,49500,40500,49500,60500,49500,40500,60500],"cpc":10.74,"comp":0.32,"sd":34,"vol":49500,"last":"202610"},{"k":"home window tinting","v":[40500,40500,49500,49500,60500,60500,49500,40500,33100,33100,27100,40500],"cpc":4.695,"comp":0.85,"sd":49,"vol":40500,"last":"202512"},{"k":"auto ceramic coating","v":[49500,49500,49500,49500,49500,40500,40500,49500,60500,60500,40500,40500],"cpc":6.31,"comp":0.95,"sd":40,"vol":49500,"last":"202608"}];
+const MES=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+(function(){
+  const nm=n=>n>=1e3?Math.round(n/1e3)+'k':String(n);
+  const head='<tr><th></th>'+MES.map(m=>'<th>'+m+'</th>').join('')+'<th style="text-align:left;padding-left:8px">Pico</th><th style="text-align:left">CPC US$</th></tr>';
+  const body=HEAT.map(r=>{
+    const vals=r.v.filter(x=>x!=null), mx=Math.max(...vals), mn=Math.min(...vals), pk=r.v.indexOf(mx);
+    const cells=r.v.map((v,i)=>{
+      if(v==null)return '<td class="c" style="background:rgba(255,255,255,.04)">–</td>';
+      const t=mx===mn?.5:(v-mn)/(mx-mn), a=(.14+t*.78).toFixed(2);
+      return `<td class="c" title="${r.k} · ${MES[i]}: ${v.toLocaleString('pt-BR')} buscas/mês" style="background:rgba(227,25,25,${a})">${nm(v)}</td>`;
+    }).join('');
+    return `<tr><td class="k">${r.k}</td>${cells}<td class="m"><b>${MES[pk]}</b></td><td class="m">$${r.cpc.toFixed(2)}</td></tr>`;
+  }).join('');
+  document.getElementById('heat').innerHTML=head+body;
+})();
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const fmt=n=>n>=1e6?(n/1e6).toFixed(1).replace('.0','')+'M':n>=1e4?Math.round(n/1e3)+'k':n>=1e3?(n/1e3).toFixed(1).replace('.0','')+'k':String(n);
